@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mark-app-1ab5f": {
+      "hosting": {
+        "cashQuiz": [
+          "mark-app-1ab5f"
+        ]
+      }
+    }
+  }
+}
