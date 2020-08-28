@@ -1,0 +1,88 @@
+*{
+    margin: 0%;
+    border: 0%;
+  }
+  /* body{
+      background: #0f3356;
+  }
+  html {
+    height: 100%;
+    background: #0f3356;
+  } */
+  p{
+      color: grey;
+  }
+  hr{
+      border-top: 2px solid #f8f9fa;
+      margin: 1rem 15%;
+  }
+  h1{
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 10% 0%;
+  }
+  
+  /* Background Image Settings */
+  .bg {
+    /* The image used */
+    background-image: url("app_main_bg.png");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  /* container for all elements */
+  .container {
+    text-align: center;
+  }
+  /* Image stylings */
+
+  .login-options img{
+      width: 15%;
+      margin: 5% 10%;
+      max-width: 100px;
+      cursor: pointer;
+  }
+  /* form setttings */
+  .form-control-sm ,.form-control-md {
+    border: solid black 0px;
+    border-radius: 2rem;
+    padding: 3% 0% 3% 10%;
+    margin: 3% 0%;
+    
+  }
+  .form-group{
+      display: flex;
+      justify-content: center;
+  }
+  .input-container{
+      display: flex;
+      align-items: center;
+  }
+  .fa-user,.fa-envelope,.fa-key,.fa-phone,.fa-unlock-alt{
+      margin: 5%;
+      color: grey;
+  }
+  legend{
+      font-size: 1rem;
+      color: grey;
+  }
+  .login {
+    margin-top: 5%;
+    padding: 3% 10% 3% 10%;
+    border: solid black 0px;
+    border-radius: 2rem;
+  }
+  /* Other login options */
+  .login-options{
+      display: flex;
+      justify-content: center;
+  }
+  
+  
