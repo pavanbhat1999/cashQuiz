@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cashQuiz"
+    }
+  },
+  "defaultProject": "cashQuiz",
+  "cli": {
+    "analytics": "df31f8cb-a7a4-4dbd-8dde-0404ddae791d"
+  }
 }
