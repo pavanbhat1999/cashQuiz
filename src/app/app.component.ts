@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cashQuiz';
+  register=true;
+  registerClicked(){
+this.register=false;
+  }
+  logInClicked(){
+    this.register = true;
+  }
 }
