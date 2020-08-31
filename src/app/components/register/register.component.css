@@ -52,7 +52,7 @@
     border: solid black 0px;
     border-radius: 2rem;
     padding: 3% 10% 3% 10%;
-    margin: 3% 0%;
+    margin: 3% 3%;
     
   }
   .form-group{
@@ -60,15 +60,21 @@
       justify-content: center;
   } 
   .input-container{
+    position: relative;
       display: flex;
       align-items: center;
       justify-content:center ;
   }
-  .fa-user,.fa-envelope,.fa-key,.fa-phone,.fa-unlock-alt{
-      margin: 5%;
-      color: grey;
+  .input-container input{
+    text-indent: 32px;
   }
-  legend{
+  .input-container .fa-user,.fa-envelope,.fa-key,.fa-phone,.fa-unlock-alt{ 
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: grey;
+  }
+ legend{
       font-size: 1rem;
       color: grey;
   }
@@ -83,5 +89,3 @@
       display: flex;
       justify-content: center;
   }
-  
-  
