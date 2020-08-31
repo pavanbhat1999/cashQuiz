@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { StartQuizComponent } from './components/start-quiz/start-quiz.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { InnerComponent } from './components/inner/inner.component';
+import { QuizQuestionComponent } from './componets/quiz-question/quiz-question.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InnerComponent } from './components/inner/inner.component';
     RegisterComponent,
     StartQuizComponent,
     AboutUsComponent,
-    InnerComponent
+    InnerComponent,
+    QuizQuestionComponent
   ],
   imports: [
     BrowserModule,

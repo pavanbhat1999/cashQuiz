@@ -18,7 +18,7 @@
       color: white;
       font-size: 1.5rem;
       font-weight: 600;
-      margin: 10% 0%;
+      padding: 10%;
   }
   
   /* Background Image Settings */
@@ -51,17 +51,18 @@
   .form-control-sm ,.form-control-md {
     border: solid black 0px;
     border-radius: 2rem;
-    padding: 3% 0% 3% 10%;
+    padding: 3% 10% 3% 10%;
     margin: 3% 0%;
     
   }
   .form-group{
       display: flex;
       justify-content: center;
-  }
+  } 
   .input-container{
       display: flex;
       align-items: center;
+      justify-content:center ;
   }
   .fa-user,.fa-envelope,.fa-key,.fa-phone,.fa-unlock-alt{
       margin: 5%;
