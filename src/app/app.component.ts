@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cashQuiz';
   register=true;
-  stratPage = true;
+  start = true;
   registerClicked(){
 this.register=false;
   }
@@ -16,6 +16,6 @@ this.register=false;
     this.register = true;
   }
   startPage(){
-    this.stratPage = false;
+    this.start = false;
   }
 }
