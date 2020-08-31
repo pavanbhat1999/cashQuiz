@@ -1,0 +1,23 @@
+p{
+    color: grey;
+}
+hr{
+    border-top: 2px solid #f8f9fa;
+    margin: 1rem 15%;
+}
+h1{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10% 0%;
+}
+#content-inner{
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.components p{
+    line-height: 1rem;
+}
