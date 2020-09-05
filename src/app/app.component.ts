@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {LoInService} from './lo-in.service'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,10 +18,10 @@ this.register=false;
   startPage(){
     this.start = false;
   }
-  constructor (private service : LoInService){
+  constructor (){
     
   }
   ngOnInit(){
-    this.service.getfun().subscribe(data => console.log(data));
+    
   }
 }

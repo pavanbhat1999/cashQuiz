@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { FormBuilder, FormGroup } from "@angular/forms";
+import {Users} from './user'
+import { Observable,pipe } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,12 +13,12 @@ export class LoInService {
     private http: HttpClient) {
      
      }
-  getfun()
+  getfun(email,password)
   {
     var data = new FormData();
-data.append("email", "loenterprise@yahoo.com");
-// data.append("password", "lo6525");
+data.append("email", email);
+data.append("password", password);
   
-    return this.http.post('https://moneyglobeapp.com/cash_quiz/API//user/login',data)  
+    return this.http.post<Users>('https://moneyglobeapp.com/cash_quiz/API//user/login',data).pipe(map(response=> response.status))  
   }
 }
