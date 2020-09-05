@@ -19,6 +19,6 @@ export class LoInService {
 data.append("email", email);
 data.append("password", password);
   
-    return this.http.post<Users>('https://moneyglobeapp.com/cash_quiz/API//user/login',data).pipe(map(response=> response.status))  
+    return this.http.post<Users>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API//user/login',data).pipe(map(response=> response.status))  
   }
 }

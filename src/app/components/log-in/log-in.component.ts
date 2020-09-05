@@ -21,6 +21,7 @@ export class LogInComponent implements OnInit {
 @Output() register_val=new EventEmitter();
 @Output() login = new EventEmitter();
 onClick(){
+  
   this.register_val.emit("true");
 }
 loginClicked(email,password){
@@ -38,7 +39,7 @@ this.uncheck();
 //this.login.emit("true");
 console.log(this.auth_success)
 
-//alert("login unsucessfull");
+
 }
 check(){
   alert("Log in successful");
@@ -47,7 +48,5 @@ check(){
 uncheck(){
   alert("Log In Unsuccessful Register or click forgot password")
 }
-submitForm(){
-  console.log("dd");
-}
+
 }
