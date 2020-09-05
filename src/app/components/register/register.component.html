@@ -24,7 +24,7 @@
                         
                         <div class="col-sm-1-12 input-container">
                             <i class="fa fa-user icon fa"></i>
-                            <input type="text" class="form-control-md form-control-sm mainLoginInput" name="username" id="username"
+                            <input #username type="text" class="form-control-md form-control-sm mainLoginInput" name="username" id="username"
                                 placeholder="User Name" />
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <label for="email" class="col-sm-1-12 col-form-label"></label>
                         <div class="col-sm-1-12 input-container">
                             <i class="fa fa-envelope icon"></i>
-                            <input type="email" class="form-control-md form-control-sm" name="email" id="email"
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
                                 placeholder="Enter Email">
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="col-sm-1-12 input-container">
                             <i class="fa fa-phone icon"></i>
 
-                            <input type="tel" class="form-control-md form-control-sm" name="phone" id="phone"
+                            <input #phone type="tel" class="form-control-md form-control-sm" name="phone" id="phone"
                                 placeholder="Phone No" />
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="col-sm-1-12 input-container">
                             <i class="fa fa-key icon"></i>
 
-                            <input type="password" class="form-control-md form-control-sm" name="password" id="password"
+                            <input #password type="password" class="form-control-md form-control-sm" name="password" id="password"
                                 placeholder="Enter Password" />
                         </div>
                     </div>
@@ -70,7 +70,7 @@
 
                     <div class="form-group row">
                         <div class="col-sm-10 col-md-10">
-                            <button type="submit" class="btn btn-primary">REGISTER</button>
+                            <p (click)="registerClicked(username.value,password.value,email.value,phone.value)" type="submit" class="btn btn-primary">REGISTER</p>
                         </div>
                     </div>
                     <fieldset class="form-group row">
