@@ -9,7 +9,7 @@ import { StartQuizComponent } from './components/start-quiz/start-quiz.component
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { InnerComponent } from './components/inner/inner.component';
 import { QuizQuestionComponent } from './components/quiz-question/quiz-question.component';
-
+import { CountdownModule } from 'ngx-countdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,7 @@ import { QuizQuestionComponent } from './components/quiz-question/quiz-question.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
