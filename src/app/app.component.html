@@ -16,10 +16,10 @@
       </head>
 
 <body>
-  <!-- <app-log-in [hidden]="!start || !register"  (register_val)="registerClicked()" (login)="startPage()" ></app-log-in>
+  <app-log-in [hidden]="!start || !register"  (register_val)="registerClicked()" (login)="startPage()" ></app-log-in>
   <app-register [hidden]="register" (register_val)="logInClicked()"></app-register>
-  <app-start-quiz [hidden]="start"></app-start-quiz> -->
-  <app-quiz-question></app-quiz-question>
+  <app-start-quiz [hidden]="start" (start)="startQuiz()"></app-start-quiz>
+  <app-quiz-question [hidden]="questions"></app-quiz-question>
   
 </body>
 </html>

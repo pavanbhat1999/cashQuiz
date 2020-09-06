@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, Input, Output, EventEmitter } from '@angular/core';
 // 1. import dependencies
 
  
@@ -11,11 +11,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-quiz.component.css']
 })
 export class StartQuizComponent implements OnInit {
-
+@Input() demo;
+@Output() start = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   
+}
+startTheQuiz(){
+  this.start.emit();
 }
 
   }

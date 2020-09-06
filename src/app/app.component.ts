@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'cashQuiz';
   register=true;
   start = true;
+  questions = true;
   registerClicked(){
 this.register=false;
   }
@@ -17,6 +18,10 @@ this.register=false;
   }
   startPage(){
     this.start = false;
+  }
+  startQuiz(){
+    this.questions = false;
+    this.start = true;
   }
   constructor (){
     
