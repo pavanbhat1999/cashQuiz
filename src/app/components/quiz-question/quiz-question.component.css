@@ -31,6 +31,7 @@
   }
   .upper-bar{
     display: flex;
+   padding-top: 5%;
 }
 
 .status{
@@ -46,8 +47,8 @@
 .status p{ color: white;}
 .timerCircle {
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 54px;
+    height: 54px;
     padding: 8px;
 
     background: #fff;
