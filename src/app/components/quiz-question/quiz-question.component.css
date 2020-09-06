@@ -29,65 +29,13 @@
     background-size: cover;
     
   }
-  /* container for all elements */
-  .container {
-    text-align: center;
+
+
+  .question{
+      width: 100%;
+      padding: 10% 0;
+      margin: 10% 0%;
+      background: black;
+      color: white;
+      text-align: center;
   }
-  /* Image stylings */
-  .logo {
-    width: 30%;
-    margin-top: 30%;
-    cursor: pointer;
-  }
-  .login-options img{
-      width: 15%;
-      margin: 5% 10%;
-      max-width: 100px;
-      cursor: pointer;
-  }
-  /* form setttings */
-  .form-control-sm ,.form-control-md {
-    border: solid black 0px;
-    border-radius: 2rem;
-    padding: 3% 0% 3% 10%;
-    margin: 3% 0%;
-    
-  }
-  .form-group{
-      display: flex;
-      justify-content: center;
-  }
-  .input-container{
-      display: flex;
-      align-items: center;
-  }
-  .fa-user,.fa-key{
-      margin: 5%;
-      color: grey;
-  }
-  legend{
-      font-size: 1rem;
-      color: grey;
-  }
-  .login {
-    margin-top: 5%;
-    padding: 3% 10% 3% 10%;
-    border: solid black 0px;
-    border-radius: 2rem;
-  }
-  /* Other login options */
-  .login-options{
-      display: flex;
-      justify-content: center;
-  }
-  .container b{
-    cursor: pointer;
-  }
-  .log-btn{
-    display: inline;
-    padding: 3%;
-    border: solid black 1px;
-    background-color: #2095f1;
-    color: white;
-  }
-  
