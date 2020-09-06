@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import {RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './components/log-in/log-in.component';
@@ -10,6 +11,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { InnerComponent } from './components/inner/inner.component';
 import { QuizQuestionComponent } from './components/quiz-question/quiz-question.component';
 import { CountdownModule } from 'ngx-countdown';
+import { EmptyPageComponent } from './empty-page/empty-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,20 @@ import { CountdownModule } from 'ngx-countdown';
     StartQuizComponent,
     AboutUsComponent,
     InnerComponent,
-    QuizQuestionComponent
+    QuizQuestionComponent,
+    EmptyPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,CountdownModule
+    HttpClientModule,
+    CountdownModule,
+    // // forchild
+    // // RouterModule.forRoot([           
+    // //   {path:'login',component: EmptyPageComponent },
+    // //   {path:'startPage',component:StartQuizComponent }
+    //   // {path:'startPage/:users',component:StartQuizComponent },
+    // ])
   ],
   providers: [],
   bootstrap: [AppComponent]

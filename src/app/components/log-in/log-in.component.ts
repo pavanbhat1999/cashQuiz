@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, NgZone } from '@angular/core';
 import {LoInService} from '../log-in/lo-in.service';
-
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -11,9 +11,10 @@ export class LogInComponent implements OnInit {
   password : string;
   users ;
   auth_success ;
+  
 @Input() movie;
 
-  constructor(private service : LoInService,ngZone : NgZone) { }
+  constructor(private service : LoInService,ngZone : NgZone,public router : Router) { }
 
   ngOnInit(): void {
     
@@ -43,7 +44,8 @@ console.log(this.auth_success)
 }
 check(){
   alert("Log in successful");
-  this.login.emit("true");
+ //this.login.emit("true");
+  this.router.navigate(['startPage']);
 }
 uncheck(){
   alert("Log In Unsuccessful Register or click forgot password")
