@@ -1,0 +1,93 @@
+*{
+    margin: 0%;
+    border: 0%;
+  }
+  body,
+  html {
+    height: 100%;
+    background: #0f3356;
+  }
+  p{
+      color: grey;
+  }
+  hr{
+      border-top: 2px solid #f8f9fa;
+      margin: 1rem 15%;
+  }
+  
+  /* Background Image Settings */
+  .bg {
+    /* The image used */
+    background-image: url("app_main_bg.png");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  /* container for all elements */
+  .container {
+    text-align: center;
+  }
+  /* Image stylings */
+  .logo {
+    width: 30%;
+    margin-top: 30%;
+    cursor: pointer;
+  }
+  .login-options img{
+      width: 15%;
+      margin: 5% 10%;
+      max-width: 100px;
+      cursor: pointer;
+  }
+  /* form setttings */
+  .form-control-sm ,.form-control-md {
+    border: solid black 0px;
+    border-radius: 2rem;
+    padding: 3% 0% 3% 10%;
+    margin: 3% 0%;
+    
+  }
+  .form-group{
+      display: flex;
+      justify-content: center;
+  }
+  .input-container{
+      display: flex;
+      align-items: center;
+  }
+  .fa-user,.fa-key{
+      margin: 5%;
+      color: grey;
+  }
+  legend{
+      font-size: 1rem;
+      color: grey;
+  }
+  .login {
+    margin-top: 5%;
+    padding: 3% 10% 3% 10%;
+    border: solid black 0px;
+    border-radius: 2rem;
+  }
+  /* Other login options */
+  .login-options{
+      display: flex;
+      justify-content: center;
+  }
+  .container b{
+    cursor: pointer;
+  }
+  .log-btn{
+    display: inline;
+    padding: 3%;
+    border: solid black 1px;
+    background-color: #2095f1;
+    color: white;
+  }
+  
