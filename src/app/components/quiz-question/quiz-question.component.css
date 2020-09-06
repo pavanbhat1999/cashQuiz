@@ -39,3 +39,22 @@
       color: white;
       text-align: center;
   }
+  .lifelines{
+      display: flex;
+  }
+
+  .heart{
+      width: 50%;
+      margin: 0 1%;
+      padding: 3% 5%;
+      background: black;
+      border: solid black 0px;
+      border-radius: 2rem;
+      text-align: center;
+  }
+  .red .fa-heart{
+      color: red;
+  }
+  .yellow .fa-heart{
+    color: yellow;
+}
