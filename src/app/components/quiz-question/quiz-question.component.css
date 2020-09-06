@@ -29,12 +29,27 @@
     background-size: cover;
     
   }
+  .upper-bar{
+    display: flex;
+}
+
+.status{
+    width: 50%;
+    margin: 0 1%;
+    padding: 3% 5%;
+    /* background: black; */
+    border: solid black 0px;
+    border-radius: 2rem;
+    text-align: center;
+   
+}
+.status p{ color: white;}
 
 
   .question{
       width: 100%;
       padding: 10% 0;
-      margin: 10% 0%;
+      margin: 15% 0% 10% 0;
       background: black;
       color: white;
       text-align: center;
