@@ -5,7 +5,7 @@
             <img src="assets/app_logo.png" alt="" class="logo" />
 
 
-            <div class="container">
+            <div class="container-login">
                 <form>
                     <div class="form-group row">
                         <label for="email" class="col-sm-1-12 col-form-label"></label>
@@ -16,7 +16,7 @@
                                 placeholder="Enter Email">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row form-group-new">
                         <label for="password" class="col-sm-1-12 col-form-label"></label>
                         <div class="col-sm-1-12 input-container">
                             <!-- <i class="fa fa-key icon fa-2x"></i> -->
@@ -25,12 +25,13 @@
                                 placeholder="Password">
                         </div>
                     </div>
-                    <fieldset class="form-group row">
+                    <!-- <fieldset class="form-group row">
                         <legend  class="col-form-legend col-sm-3-12">Forgot Passsword?</legend>
                         <div class="col-sm-1-12">
-
                         </div>
-                    </fieldset>
+                    </fieldset> -->
+                    <p style="    display: inline;
+                    padding-left: 25%;">Forgot Password</p>
                     <div style="width: 100%;" class="log">
                     <div class="form-group row">
                         <div  class="col-sm-10 col-md-10">
@@ -43,24 +44,27 @@
                 </form>
                 <p>Not Registered? <b (click)="onClick()" routerLink="/register">Register Now</b></p>
             </div>
-            <hr>
+            
             <p class="p"><b>OR</b></p>
-            <hr>
+            
             <p>Login With</p>
             <div class="login-options">
-            
-                    <img src="assets/google.png" alt="google">
-                
-                
+                <div class="google">
+                <img src="assets/google.png" alt="google">
+                <p> Google</p>
+                </div>
+                <div class="facebook">
                 <img src="assets/facebook.png" alt="facebook">
+                <p>Facebook</p>
+                </div>
                 
             </div>
             <div class="login-options">
             
-                <p style="margin-right: 15%;"> Google</p>
+               
             
             
-                <p style="margin-left: 5%;">Facebook</p>
+                
             
             </div>
 

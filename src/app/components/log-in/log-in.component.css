@@ -125,6 +125,30 @@
       margin: auto 5%; 
   } 
     
+.google{
+  width: 25%;
+  border-right: solid white 1px;
+  
+}
+.google img{
+  width: 50%;
+  margin: 5%;
+  
+}
+.facebook{
+  width: 25%;
+  
+}
+.facebook img{
+  width: 50%;
+  
+}
+.form-group-new{
+  margin: 0;
+}
+.form-group{
+  margin-top: 0.5rem;
+}
 
 
   
