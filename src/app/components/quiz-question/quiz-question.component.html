@@ -1,11 +1,11 @@
-<div class="bg">
+<div *ngIf=loadComplete class="bg">
     <div class="upper-bar">
         <div class="status">
             <p> Question</p>
-            <p>1/10</p>
+            <p>{{question}}/10</p>
         </div>
         <div class="timer">
-            <div class="timerCircle"> <countdown style="color: black;font-size:2rem;" [config]="{leftTime: 10,format:'s'}"></countdown></div>
+            <div   class="timerCircle"> <countdown #countdown style="color: black;font-size:2rem;" [config]="{leftTime: 10,format:'s'}"  (event)="onTImerFinished($event)"></countdown></div>
        
         </div>
         <div class="status">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="question">
-        <p>{{printQuestion}}</p>
+        <p>  {{printQuestion}}</p>
     </div>
     <div class="lifelines">
         <div class="heart red">
@@ -32,19 +32,19 @@
     <div class="options">
         <div class="option a1">
             <div class="numberCircle">A</div>
-            <p>option1</p>
+            <p>{{option1}}</p>
         </div>
         <div class="option a2">
             <div class="numberCircle">B</div>
-            <p>option2</p>
+            <p>{{option2}}</p>
         </div>
         <div class="option a3">
             <div class="numberCircle">C</div>
-            <p>option3</p>
+            <p>{{option3}}</p>
         </div>
         <div class="option a4">
             <div class="numberCircle">D</div>
-            <p>option4</p>
+            <p>{{option4}}</p>
         </div>
     </div>
 
