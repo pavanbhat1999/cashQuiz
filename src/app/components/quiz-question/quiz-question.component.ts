@@ -36,6 +36,7 @@ export class QuizQuestionComponent implements OnInit {
 callfun(response){
 console.log("called")
 this.questions = response;
+
 console.log(this.questions[this.question].mq_question);
 console.log(this.questions[this.question].mcq_answer_master);
 this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -48,6 +49,7 @@ this.loadComplete = true;
 }
 onTImerFinished(e){
   if (e["action"] == "done"){
+    if (this.question<10){
     console.log("question complete goto next");
     this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
     this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
@@ -55,7 +57,7 @@ onTImerFinished(e){
     this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
     this.printQuestion=this.questions[this.question++].mq_question;
     this.restart();
-    
+  }
   }
 }
 restart() {
