@@ -1,4 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, Input, Output, EventEmitter } from '@angular/core';
+import {} from 'jquery';
 // 1. import dependencies
 
  
@@ -13,10 +14,21 @@ import { Component, OnInit, ComponentFactoryResolver, Input, Output, EventEmitte
 export class StartQuizComponent implements OnInit {
 @Input() demo;
 @Output() start = new EventEmitter();
+reload : number = 0;
   constructor() { }
 
   ngOnInit(): void {
   
+    // setTimeout(function(){
+    //   location.reload()
+    // },1000);
+    const firstTime = localStorage.getItem('key')
+ if(!firstTime){
+  localStorage.setItem('key','loaded')
+  location.reload()
+ }else {
+   localStorage.removeItem('key') 
+ }
 }
 startTheQuiz(){
   this.start.emit();
