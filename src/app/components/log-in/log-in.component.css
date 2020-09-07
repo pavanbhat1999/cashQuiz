@@ -12,7 +12,9 @@
   }
   hr{
       border-top: 2px solid #f8f9fa;
-      margin: 1rem 15%;
+      margin: 1rem 0% 1rem 15%;
+      width: 25%;
+      display: inline;
   }
   
   /* Background Image Settings */
@@ -61,13 +63,26 @@
       display: flex;
       align-items: center;
   }
-  .fa-user,.fa-key{
-      margin: 5%;
-      color: grey;
+  .input-container{
+    position: relative;
+      display: flex;
+      align-items: center;
+      justify-content:center ;
   }
+  .input-container input{
+    text-indent: 32px;
+  }
+  .input-container .fa-user,.fa-envelope,.fa-key,.fa-phone,.fa-unlock-alt{ 
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: grey;
+  }
+ 
   legend{
       font-size: 1rem;
-      color: grey;
+      color: white;
+      text-align: right;
   }
   .login {
     margin-top: 5%;
@@ -79,15 +94,37 @@
   .login-options{
       display: flex;
       justify-content: center;
+      
+  }
+  .google-login,.facebook-login{
+    width: 100%;
   }
   .container b{
     cursor: pointer;
   }
   .log-btn{
     display: inline;
-    padding: 3%;
+    padding: 2% 25%;
     border: solid black 1px;
-    background-color: #2095f1;
+    border-radius: 2rem;
+    /* background-color: #2095f1; */
     color: white;
   }
+  
+  .p { 
+      display: flex; 
+      flex-direction: row; 
+      padding: 2%;
+  } 
+    
+  .p:before, 
+  .p:after { 
+      content: ""; 
+      flex: 1 1; 
+      border-bottom: 2px solid white; 
+      margin: auto 5%; 
+  } 
+    
+
+
   
