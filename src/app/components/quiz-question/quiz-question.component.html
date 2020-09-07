@@ -1,4 +1,7 @@
-<div *ngIf=loadComplete class="bg">
+<div *ngIf=!loadComplete class="bg1">
+    <div  class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
+    <div *ngIf=loadComplete class="bg">
     <div class="upper-bar">
         <div class="status">
             <p> Question</p>
