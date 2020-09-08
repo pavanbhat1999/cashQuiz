@@ -13,6 +13,8 @@ import { QuizQuestionComponent } from './components/quiz-question/quiz-question.
 import { CountdownModule } from 'ngx-countdown';
 import { EmptyPageComponent } from './empty-page/empty-page.component';
 import {Ng2TelInputModule} from 'ng2-tel-input';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {Ng2TelInputModule} from 'ng2-tel-input';
     AppRoutingModule,
     HttpClientModule,
     CountdownModule,
-    Ng2TelInputModule
+    Ng2TelInputModule,
+    NgxIntlTelInputModule,
+    BrowserAnimationsModule
     // // forchild
     // // RouterModule.forRoot([           
     // //   {path:'login',component: EmptyPageComponent },

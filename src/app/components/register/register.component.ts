@@ -38,5 +38,17 @@ registerSuccess(){
 uncheck(){
   alert("Registtratin Unsuccessful Check whether you have used any repeted entities")
 }
+onCountryChange($event){
+alert("change");
+}
+hasError(event){
+
+}
+getNumber(event){
+
+}
+telInputObject($event){
+
+}
 }
 

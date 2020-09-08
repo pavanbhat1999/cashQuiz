@@ -41,10 +41,9 @@
                     <div class="form-group row">
                         <label for="phone" class="col-sm-1-12 col-form-label"></label>
                         <div class="col-sm-1-12 input-container">
-                            <i class="fa fa-phone icon"></i>
-
-                            <input ng2TelInput #phone type="tel" class="form-control-md form-control-sm" name="phone" id="phone"
-                                placeholder="Phone No" />
+                            <i  class="fa fa-phone icon"></i>
+                            
+                            <ngx-intl-tel-input #phone class="phone"> </ngx-intl-tel-input>
                                 
                         </div>
                     </div>
@@ -77,7 +76,7 @@
                                 placeholder="Register" /> 
                         </div>
                     </div>
-
+                    
                     <!-- <div class="form-group row">
                         <div class="col-sm-10 col-md-10 input-container">
                             <p (click)="registerClicked(username.value,password.value,email.value,phone.value)" type="submit" class="btn btn-primary">REGISTER</p>

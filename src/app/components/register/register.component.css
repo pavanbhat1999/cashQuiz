@@ -55,6 +55,10 @@
     margin: 3% 3%;
     
   }
+  .phone{
+    border: solid black 0px;
+    border-radius: 2rem;
+  }
   .form-group{
       display: flex;
       justify-content: center;
