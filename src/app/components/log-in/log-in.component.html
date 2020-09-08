@@ -32,15 +32,25 @@
                     </fieldset> -->
                     <p style="    display: inline;
                     padding-left: 25%;color: rgb(172, 169, 169);"><b>Forgot Password</b></p>
-                    <div style="width: 100%;" class="log">
+                     <div class="form-group row">
+                        
+                        
+                        <div class="col-sm-1-12 input-container">
+                            
+                            <input (click)="loginClicked(email.value,password.value)" style="text-align: center; text-indent: 0px;background:#007bff;color: white;border: solid black 1px;" readonly  type="text" class="Login form-control-md form-control-sm" name="password" id="password"
+                                placeholder="LOGIN" /> 
+                        </div>
+                    </div>
+
+                    <!-- <div style="width: 100%;" class="log">
                     <div class="form-group row">
                         <div  class="col-sm-10 col-md-10">
-                            <!-- It is not taking button -->
-                           <!-- <p class="log-btn"  (click)="loginClicked()">LOGIN</p> -->
+                            It is not taking button
+                           <p class="log-btn"  (click)="loginClicked()">LOGIN</p>
                            <p (click)="loginClicked(email.value,password.value)" type="submit" class="btn btn-primary log-btn">LOGIN</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 </form>
                 <p>Not Registered? <b style="color: rgb(172, 169, 169);" (click)="onClick()" routerLink="/register">Register Now</b></p>
             </div>
