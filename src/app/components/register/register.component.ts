@@ -50,5 +50,8 @@ getNumber(event){
 telInputObject($event){
 
 }
+ model: any = {
+    
+  };
 }
 
