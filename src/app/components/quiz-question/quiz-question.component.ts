@@ -20,7 +20,7 @@ export class QuizQuestionComponent implements OnInit {
   option2 : number;
   option3 : number;
   option4 : number;
-  bgcolor : string = 'red';
+  bgcolor : string = 'blue';
 
   selectedoption = false;
   
@@ -57,7 +57,7 @@ onTImerFinished(e){
     if (this.question<10){
     console.log("question complete goto next");
     this.selectedoption = false;
-    this.bgcolor = 'red';
+    this.bgcolor = 'blue';
     this.question++;
     console.log(this.questions[this.question].mcq_answer_master);
     this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -80,22 +80,33 @@ selectoption1(){
   console.log(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer);
   if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
   this.bgcolor = 'green';
+  if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="wrong")
+  this.bgcolor = 'red';
   this.selectedoption = true;
  
 }
 selectoption2(){
   if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
   this.bgcolor = 'green';
+  if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="wrong")
+  this.bgcolor = 'red';
+  this.selectedoption = true;
  
 }
 selectoption3(){
   if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
   this.bgcolor = 'green';
+  if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="wrong")
+  this.bgcolor = 'red';
+  this.selectedoption = true;
  
 }
 selectoption4(){
   if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
   this.bgcolor = 'green';
+  if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="wrong")
+  this.bgcolor = 'red';
+  this.selectedoption = true;
  
 }
 }
