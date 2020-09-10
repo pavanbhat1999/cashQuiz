@@ -15,6 +15,8 @@ import { EmptyPageComponent } from './empty-page/empty-page.component';
 import {Ng2TelInputModule} from 'ng2-tel-input';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CountdownModule,
     Ng2TelInputModule,
     NgxIntlTelInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
     // // forchild
     // // RouterModule.forRoot([           
     // //   {path:'login',component: EmptyPageComponent },

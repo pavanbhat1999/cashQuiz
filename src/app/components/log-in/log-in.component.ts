@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input, NgZone } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, NgZone, ElementRef } from '@angular/core';
 import {LoInService} from '../log-in/lo-in.service';
 import {Router} from '@angular/router'
 @Component({
@@ -14,9 +14,10 @@ export class LogInComponent implements OnInit {
   
 @Input() movie;
 
-  constructor(private service : LoInService,ngZone : NgZone,public router : Router) { }
+  constructor(private service : LoInService,ngZone : NgZone,public router : Router,private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+    
     
   }
 @Output() register_val=new EventEmitter();

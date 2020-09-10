@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {SwUpdate} from '@angular/service-worker'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,7 +25,12 @@ this.register=false;
     this.questions = false;
     this.start = true;
   }
-  constructor (){
+  update : boolean = false;
+  constructor (updates : SwUpdate){
+    
+//  this.update = true;
+     
+    
     
   }
   ngOnInit(){

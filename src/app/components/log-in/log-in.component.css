@@ -7,6 +7,7 @@
     height: 100%;
     background: #0f3356;
   }
+  
   p{
       color: grey;
   }
@@ -21,7 +22,7 @@
   .bg {
     /* The image used */
     background-image: url("app_main_bg.png");
-  
+    
     /* Full height */
     height: 100%;
   
