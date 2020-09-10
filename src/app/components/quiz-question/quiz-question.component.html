@@ -1,11 +1,15 @@
 <div *ngIf=!loadComplete class="bg1">
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 </div>
-    <div *ngIf=loadComplete class="bg" [style.background-color]="bgcolor">
+<div class="bg1" *ngIf=finished&&loadComplete>
+    <h1>Completed the First Round</h1>
+    <p>You answered :{{rightanswer}} out of 10</p>
+</div>
+    <div *ngIf=loadComplete&&!finished class="bg" [style.background-color]="bgcolor">
     <div class="upper-bar">
         <div class="status">
             <p> Question</p>
-            <p>{{question}}/10</p>
+            <p>{{question+1}}/10</p>
         </div>
         <div class="timer">
             <div   class="timerCircle"> <countdown #countdown style="color: black;font-size:2rem;" [config]="{leftTime: 10,format:'s'}"  (event)="onTImerFinished($event)"></countdown></div>
@@ -13,7 +17,7 @@
         </div>
         <div class="status">
             <p>Right answer</p>
-            <p>1/10</p>
+            <p>{{rightanswer}}/10</p>
         </div>
     </div>
     <div class="details">
