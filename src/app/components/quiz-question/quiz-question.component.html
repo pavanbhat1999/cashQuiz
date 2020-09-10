@@ -1,8 +1,8 @@
 <div *ngIf=!loadComplete class="bg1">
     <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 </div>
-<div class="bg1" *ngIf=finished&&loadComplete>
-    <h1>Completed the First Round</h1>
+<div style="display: flex;flex-direction: column;" class="bg1" *ngIf=finished&&loadComplete>
+    <p><b style="color: white;">Completed the First Round</b></p>
     <p>You answered :{{rightanswer}} out of 10</p>
 </div>
     <div *ngIf=loadComplete&&!finished class="bg" [style.background-color]="bgcolor">
