@@ -217,4 +217,24 @@
     align-items: center;
     
   }
-  
+
+  /* trophy page */
+
+  .trophy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    /* animation-iteration-count: infinite; */
+  }
+  /* The animation code */
+@keyframes example {
+  0%   {transform: rotate(-20deg);}
+  25%  {transform: rotate( 20deg);}
+  50%  {transform: rotate(-20deg);}
+  75%  {transform: rotate( 20deg);}
+  100% {transform: rotate(-20deg);}
+}
+

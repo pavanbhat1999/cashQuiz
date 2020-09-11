@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild, Output, EventEmitter } from '@angular/core';
 import {QuestionService}  from '../quiz-question/question.service';
 import { from } from 'rxjs';
 import { CountdownComponent } from 'ngx-countdown';
@@ -11,6 +11,9 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 
 export class QuizQuestionComponent implements OnInit {
+  @Output()continueclicked = new EventEmitter();
+  amount ;
+  round : number =1;
   questions = [];
   question : number = 0;
   rightanswer : number = 0;
@@ -73,6 +76,8 @@ onTImerFinished(e){
     }
     else{
       this.finished = true;
+      this.service.putAmount(this.rightanswer,this.round);
+      this.amount = this.service.getAmount();
     }
   }
 }
@@ -128,4 +133,35 @@ selectoption4(){
   this.selectedoption = true;
  
 }
+continueClicked()
+{
+  this.round++;
+  this.rightanswer = 0;
+  console.log("amount= "+this.rightanswer);
+  console.log("GotAmount="+this.service.getAmount());
+  this.loadComplete = false;
+  this.finished = false;
+  this.selectedoption = false;
+  this.bgcolor = 'blue';
+  this.service.getfun()
+    .subscribe(response => 
+    {
+    console.log(response);
+    this.callfun1(response);
+    });
+}
+callfun1(response){
+  console.log("called")
+  this.questions = response;
+  
+  console.log(this.questions[this.question].mq_question);
+  console.log(this.questions[this.question].mcq_answer_master);
+  this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
+  this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
+  this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
+  this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
+  this.printQuestion=this.questions[this.question].mq_question;
+  this.loadComplete = true;
+  
+  }
 }

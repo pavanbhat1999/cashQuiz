@@ -9,9 +9,21 @@ import { map } from 'rxjs/operators';
 })
 export class QuestionService {
   form: FormGroup;
+  amount : number=0 ;
   constructor( 
     private http: HttpClient) {
      
+     }
+     putAmount(rightAnswer : number,round){
+       if(round==1){
+        rightAnswer=rightAnswer*0.2;
+       }
+       else
+          rightAnswer = rightAnswer*0.4;
+        this.amount = this.amount+rightAnswer;
+     }
+     getAmount(){
+        return this.amount;
      }
   getfun()
   {
