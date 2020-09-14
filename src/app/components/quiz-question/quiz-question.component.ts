@@ -74,7 +74,7 @@ onTImerFinished(e)
   console.log(e);
   if (e["action"] == "done")
   {
-    if (this.question<5)
+    if (this.question<4)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
@@ -88,7 +88,7 @@ onTImerFinished(e)
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
       this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
-      if(this.question==5)
+      if(this.question==4)
       this.question +=5;
       this.restart();
     }
@@ -107,7 +107,7 @@ onTImerFinished(e)
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
       this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
       if(this.question==12)
-      this.question +=2;
+      this.question +=1;
       this.restart();
     }
     else if(this.question<20&&this.questionNow<9)
