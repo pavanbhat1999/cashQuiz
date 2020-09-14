@@ -70,7 +70,7 @@ onTImerFinished(e){
   console.log(e);
   if (e["action"] == "done")
   {
-    if (this.question<2)
+    if (this.question<9)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
