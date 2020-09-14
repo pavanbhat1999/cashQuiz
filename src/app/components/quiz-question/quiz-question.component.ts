@@ -25,9 +25,19 @@ export class QuizQuestionComponent implements OnInit {
   option2 : number;
   option3 : number;
   option4 : number;
-  bgcolor : string = 'blue';
+  bgcolor : string = '#0f3356';
 
   selectedoption = false;
+  selectedoption1 = false;
+  selectedoption2 = false;
+  selectedoption3 = false;
+  selectedoption4 = false;
+  selectedBorder : string = "";
+  opacity : string = "";
+  opacity1 : string = "50%";
+  opacity2 : string = "50%";
+  opacity3 : string = "50%";
+  opacity4 : string = "50%";
   
   @ViewChild('countdown') counter: CountdownComponent;
   constructor(private service : QuestionService) { }
@@ -64,7 +74,7 @@ onTImerFinished(e){
     {
       console.log("question complete goto next");
       this.selectedoption = false;
-      this.bgcolor = 'blue';
+      this.bgcolor = '#0f3356';
       this.question++;
       console.log(this.questions[this.question].mcq_answer_master);
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -93,22 +103,66 @@ selectoption1(){
   if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
   {
   this.bgcolor = 'green';
+  
+ 
+
   this.rightanswer ++;
   }
   if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="wrong")
-  this.bgcolor = 'red';
+  {
+  this.bgcolor = '#f64225';
+ 
+  }
   this.selectedoption = true;
+  
+  
+  
+
  
 }
+optionStyles(){
+  if (this.selectedoption1==true){
+  this.initOpacity();
+  this.opacity1= '100%'
+}
+  if (this.selectedoption2==true)
+  {
+    this.initOpacity();
+  this.opacity2= '100%'
+  }
+  if (this.selectedoption3==true)
+  {
+    this.initOpacity();
+  this.opacity3= '100%'
+  }
+  if (this.selectedoption4==true)
+  {
+    this.initOpacity();
+  this.opacity4= '100%'
+  }
+
+}
+initOpacity(){
+  this.opacity1  = "50%";
+  this.opacity2  = "50%";
+  this.opacity3  = "50%";
+  this.opacity4  = "50%";
+
+}
+
 selectoption2(){
   if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
   {
     this.bgcolor = 'green';
+    
     this.rightanswer ++;
     }
   if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="wrong")
+  {
   this.bgcolor = 'red';
-  this.selectedoption = true;
+  
+  }
+  
  
 }
 selectoption3(){
@@ -121,6 +175,7 @@ selectoption3(){
   this.bgcolor = 'red';
   this.selectedoption = true;
  
+ 
 }
 selectoption4(){
   if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
@@ -131,6 +186,7 @@ selectoption4(){
   if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="wrong")
   this.bgcolor = 'red';
   this.selectedoption = true;
+  
  
 }
 continueClicked()
@@ -143,7 +199,7 @@ continueClicked()
   this.loadComplete = false;
   this.finished = false;
   this.selectedoption = false;
-  this.bgcolor = 'blue';
+  this.bgcolor = '#0f3356';
   this.service.getfun()
     .subscribe(response => 
     {
