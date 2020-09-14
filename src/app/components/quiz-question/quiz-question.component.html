@@ -57,7 +57,7 @@
     <div class="upper-bar">
         <div class="status">
         <p>Question</p>
-        <p>{{ question + 1 }}/10</p>
+        <p>{{ questionNow + 1 }}/10</p>
         </div>
         <div class="timer">
         <div class="timerCircle">
@@ -80,8 +80,8 @@
         <p>{{ printQuestion }}</p>
     </div>
     <div class="lifelines">
-        <div class="heart red">
-        <p><i class="fas fa-heart"></i> Use(1)</p>
+        <div (click)="redHeart()" class="heart red">
+        <p ><i class="fas fa-heart"></i> Use({{redHeartCount}})</p>
         </div>
         <div class="heart yellow">
         <p><i class="fas fa-heart"></i> Use(1)</p>
@@ -128,5 +128,5 @@
                 <p [style.color]="opacity4">{{ option4 }}</p>
             </div>
         </div>
-  
+  <p *ngIf="redHeartUsed">You used red heart for this question</p>
 </div>
