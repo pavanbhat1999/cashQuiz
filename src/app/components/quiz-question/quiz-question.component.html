@@ -1,86 +1,132 @@
-<div *ngIf=!loadComplete class="bg1">
-    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<!-- Loading animation before Loading -->
+<div *ngIf="!loadComplete" class="bg1">
+  <div class="lds-spinner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 </div>
-<div style="display: flex;flex-direction: column;" class="bg1" *ngIf=finished&&loadComplete>
-    <p><b style="color: white;">Round: {{round}} </b></p>
-    <p style="color: white;">You answered :{{rightanswer}} out of 10</p>
-    <p style="color: white;">Amount : {{amount}}</p>
-    <p style="color: white;">Remain<i style="color: red;"  class="fas fa-heart"></i>: 1   <i style="color: yellow;" class="fas fa-heart"></i> :1</p>
-    <div class="trophy">
-    <img style="width: 50%;margin: 10%;" src="assets/winnercup.png" alt="cup" class="" />
-    </div>
-    <p><b style="color: green;">YOU WON</b></p>
-    <button style="padding:2% 20%;border-radius: 2rem;" (click)="continueClicked()" class="btn btn-primary">Continue</button>
+
+<!-- Finished The Round Continue -->
+<div
+  style="display: flex; flex-direction: column"
+  class="bg1"
+  *ngIf="finished && loadComplete"
+>
+  <p>
+    <b style="color: white">Round: {{ round }} </b>
+  </p>
+  <p style="color: white">You answered :{{ rightanswer }} out of 10</p>
+  <p style="color: white">Amount : {{ amount }}</p>
+  <p style="color: white">
+    Remain<i style="color: red" class="fas fa-heart"></i>: 1
+    <i style="color: yellow" class="fas fa-heart"></i> :1
+  </p>
+  <div class="trophy">
+    <img
+      style="width: 50%; margin: 10%"
+      src="assets/winnercup.png"
+      alt="cup"
+      class=""
+    />
+  </div>
+  <p><b style="color: green">YOU WON</b></p>
+  <button
+    style="padding: 2% 20%; border-radius: 2rem"
+    (click)="continueClicked()"
+    class="btn btn-primary"
+  >
+    Continue
+  </button>
 </div>
-    <div *ngIf=loadComplete&&!finished class="bg" [style.background-color]="bgcolor">
+<!-- Loading is done -->
+<div
+  *ngIf="loadComplete && !finished"
+  class="bg"
+  [style.background-color]="bgcolor"
+>
     <div class="upper-bar">
         <div class="status">
-            <p> Question</p>
-            <p>{{question+1}}/10</p>
+        <p>Question</p>
+        <p>{{ question + 1 }}/10</p>
         </div>
         <div class="timer">
-            <div   class="timerCircle"> <countdown #countdown style="color: black;font-size:2rem;" [config]="{leftTime: 10,format:'s'}"  (event)="onTImerFinished($event)"></countdown></div>
-       
+        <div class="timerCircle">
+            <countdown
+            #countdown
+            style="color: black; font-size: 2rem"
+            [config]="{ leftTime: 10, format: 's' }"
+            (event)="onTImerFinished($event)"
+            ></countdown>
+        </div>
         </div>
         <div class="status">
-            <p>Right answer</p>
-            <p>{{rightanswer}}/10</p>
+        <p>Right answer</p>
+        <p>{{ rightanswer }}/10</p>
         </div>
     </div>
-    <div class="details">
-        
-    </div>
+    <div class="details"></div>
 
     <div class="question">
-        <p>  {{printQuestion}}</p>
+        <p>{{ printQuestion }}</p>
     </div>
     <div class="lifelines">
         <div class="heart red">
-            <p><i class="fas fa-heart"></i> Use(1)</p>
+        <p><i class="fas fa-heart"></i> Use(1)</p>
         </div>
         <div class="heart yellow">
-            <p><i class="fas fa-heart"></i> Use(1)</p>
+        <p><i class="fas fa-heart"></i> Use(1)</p>
         </div>
     </div>
 
-    <div class="options">
-        
-        <div [hidden]="selectedoption" (click)="selectoption1()"  class="option a1">
-            <div class="numberCircle">A</div>
+        <div *ngIf="!selectedoption" class="options">
+
+                <!-- Not selected Clickable -->
+                <div  (click)="selectoption1()" class="option a1">
+                    <div class="numberCircle">A</div>
+                    <p>{{ option1 }}</p>
+                </div>
+                <div  (click)="selectoption2()" class="option a2">
+                    <div class="numberCircle">B</div>
+                    <p>{{ option2 }}</p>
+                </div>
+                <div  (click)="selectoption3()" class="option a3">
+                    <div class="numberCircle">C</div>
+                    <p>{{ option3 }}</p>
+                </div>
             
-            <p>{{option1}}</p>
+                <div  (click)="selectoption4()" class="option a4">
+                    <div class="numberCircle">D</div>
+                    <p>{{ option4 }}</p>
+                </div>
         </div>
-        <div [hidden]="!selectedoption"  class="option a1">
-            <div class="numberCircle">A</div>
-            <p [style.color]="opacity1">{{option1}}</p>
+            <!-- Selected Not Clickable-->
+        <div *ngIf="selectedoption" class="options">
+            <div  class="option a1">
+                <div class="numberCircle">A</div>
+                <p [style.color]="opacity1">{{ option1 }}</p>
+            </div>
+            <div  class="option a2">
+                <div class="numberCircle">B</div>
+                <p [style.color]="opacity2">{{ option2 }}</p>
+            </div>
+            <div  class="option a3">
+                <div class="numberCircle">C</div>
+                <p [style.color]="opacity3">{{ option3 }}</p>
+            </div>  
+            <div  class="option a4">
+                <div class="numberCircle">D</div>
+                <p [style.color]="opacity4">{{ option4 }}</p>
+            </div>
         </div>
-        
-        
-        <div [hidden]="selectedoption" (click)="selectoption2()" class="option a2">
-            <div class="numberCircle">B</div>
-            <p>{{option2}}</p>
-        </div>
-        <div [hidden]="!selectedoption"  class="option a2">
-            <div class="numberCircle">B</div>
-            <p [style.color]="opacity2">{{option2}}</p>
-        </div>
-        <div [hidden]="selectedoption" (click)="selectoption3()" class="option a3">
-            <div class="numberCircle">C</div>
-            <p >{{option3}}</p>
-        </div>
-        <div [hidden]="!selectedoption"  class="option a3">
-            <div class="numberCircle">C</div>
-            <p [style.color]="opacity3">{{option3}}</p>
-        </div>
-        <div [hidden]="selectedoption" (click)="selectoption4()" class="option a4">
-            <div class="numberCircle">D</div>
-            <p>{{option4}}</p>
-        </div>
-        <div [hidden]="!selectedoption"  class="option a4">
-            <div class="numberCircle">D</div>
-            <p [style.color]="opacity4">{{option4}}</p>
-        </div>
-    </div>
-
-
+  
 </div>
