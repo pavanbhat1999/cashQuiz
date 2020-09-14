@@ -36,8 +36,8 @@ export class QuizQuestionComponent implements OnInit {
   opacity : string = "";
   opacity1 : string = "";
   opacity2 : string = "";
-  opacity3 : string = "50%";
-  opacity4 : string = "50%";
+  opacity3 : string = "";
+  opacity4 : string = "";
   val = "";
   @ViewChild('countdown') counter: CountdownComponent;
   constructor(private service : QuestionService) { }
@@ -121,28 +121,29 @@ selectoption1(){
 
  
 }
-optionStyles(){
-  if (this.selectedoption1==true){
-  this.initOpacity();
-  this.opacity1= '100%'
-}
-  if (this.selectedoption2==true)
-  {
-    this.initOpacity();
-  this.opacity2= '100%'
-  }
-  if (this.selectedoption3==true)
-  {
-    this.initOpacity();
-  this.opacity3= '100%'
-  }
-  if (this.selectedoption4==true)
-  {
-    this.initOpacity();
-  this.opacity4= '100%'
-  }
+// optionStyles()
+// {
+//   if (this.selectedoption1==true){
+//   this.initOpacity();
+//   this.opacity1= '100%'
+// }
+//   if (this.selectedoption2==true)
+//   {
+//     this.initOpacity();
+//   this.opacity2= '100%'
+//   }
+//   if (this.selectedoption3==true)
+//   {
+//     this.initOpacity();
+//   this.opacity3= '100%'
+//   }
+//   if (this.selectedoption4==true)
+//   {
+//     this.initOpacity();
+//   this.opacity4= '100%'
+//   }
 
-}
+// }
 initOpacity(){
   this.opacity1  = "#464748";
   this.opacity2  = "#464748";
