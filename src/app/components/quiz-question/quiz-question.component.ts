@@ -34,11 +34,11 @@ export class QuizQuestionComponent implements OnInit {
   selectedoption4 = false;
   selectedBorder : string = "";
   opacity : string = "";
-  opacity1 : string = "50%";
-  opacity2 : string = "50%";
+  opacity1 : string = "";
+  opacity2 : string = "";
   opacity3 : string = "50%";
   opacity4 : string = "50%";
-  
+  val = "";
   @ViewChild('countdown') counter: CountdownComponent;
   constructor(private service : QuestionService) { }
 
@@ -70,7 +70,7 @@ onTImerFinished(e){
   console.log(e);
   if (e["action"] == "done")
   {
-    if (this.question<1)
+    if (this.question<2)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
@@ -114,7 +114,8 @@ selectoption1(){
  
   }
   this.selectedoption = true;
-  
+  this.initOpacity();
+  this.opacity1 = "white";
   
   
 
@@ -143,10 +144,11 @@ optionStyles(){
 
 }
 initOpacity(){
-  this.opacity1  = "50%";
-  this.opacity2  = "50%";
-  this.opacity3  = "50%";
-  this.opacity4  = "50%";
+  this.opacity1  = "";
+  this.opacity2  = "";
+  this.opacity3  = "";
+  this.opacity4  = "";
+  
 
 }
 
@@ -162,7 +164,9 @@ selectoption2(){
   this.bgcolor = 'red';
   
   }
-  
+  this.selectedoption = true;
+  this.initOpacity();
+  this.opacity2 = "white";
  
 }
 selectoption3(){
@@ -174,7 +178,8 @@ selectoption3(){
   if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="wrong")
   this.bgcolor = 'red';
   this.selectedoption = true;
- 
+  this.initOpacity();
+  this.opacity3 = "white";
  
 }
 selectoption4(){
@@ -186,7 +191,8 @@ selectoption4(){
   if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="wrong")
   this.bgcolor = 'red';
   this.selectedoption = true;
-  
+  this.initOpacity();
+  this.opacity4 = "white";
  
 }
 continueClicked()

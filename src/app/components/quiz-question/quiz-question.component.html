@@ -45,15 +45,16 @@
 
     <div class="options">
         
-        <div [hidden]="selectedoption" (click)="selectoption1()" class="option a1">
+        <div [hidden]="selectedoption" (click)="selectoption1()"  class="option a1">
             <div class="numberCircle">A</div>
             
             <p>{{option1}}</p>
         </div>
         <div [hidden]="!selectedoption"  class="option a1">
             <div class="numberCircle">A</div>
-            <p>{{option1}}</p>
+            <p [style.color]="opacity1">{{option1}}</p>
         </div>
+        
         
         <div [hidden]="selectedoption" (click)="selectoption2()" class="option a2">
             <div class="numberCircle">B</div>
@@ -61,15 +62,15 @@
         </div>
         <div [hidden]="!selectedoption"  class="option a2">
             <div class="numberCircle">B</div>
-            <p>{{option2}}</p>
+            <p [style.color]="opacity2">{{option2}}</p>
         </div>
         <div [hidden]="selectedoption" (click)="selectoption3()" class="option a3">
             <div class="numberCircle">C</div>
-            <p>{{option3}}</p>
+            <p >{{option3}}</p>
         </div>
         <div [hidden]="!selectedoption"  class="option a3">
             <div class="numberCircle">C</div>
-            <p>{{option3}}</p>
+            <p [style.color]="opacity3">{{option3}}</p>
         </div>
         <div [hidden]="selectedoption" (click)="selectoption4()" class="option a4">
             <div class="numberCircle">D</div>
@@ -77,7 +78,7 @@
         </div>
         <div [hidden]="!selectedoption"  class="option a4">
             <div class="numberCircle">D</div>
-            <p>{{option4}}</p>
+            <p [style.color]="opacity4">{{option4}}</p>
         </div>
     </div>
 
