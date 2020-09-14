@@ -144,10 +144,10 @@ optionStyles(){
 
 }
 initOpacity(){
-  this.opacity1  = "";
-  this.opacity2  = "";
-  this.opacity3  = "";
-  this.opacity4  = "";
+  this.opacity1  = "#464748";
+  this.opacity2  = "#464748";
+  this.opacity3  = "#464748";
+  this.opacity4  = "#464748";
   
 
 }
