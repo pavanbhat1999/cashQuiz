@@ -60,7 +60,7 @@ onTImerFinished(e){
   console.log(e);
   if (e["action"] == "done")
   {
-    if (this.question<0)
+    if (this.question<1)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
@@ -137,6 +137,7 @@ continueClicked()
 {
   this.round++;
   this.rightanswer = 0;
+  this.question = 0;
   console.log("amount= "+this.rightanswer);
   console.log("GotAmount="+this.service.getAmount());
   this.loadComplete = false;
