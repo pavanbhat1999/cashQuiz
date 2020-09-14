@@ -29,7 +29,7 @@ export class QuestionService {
   {
     var data = new FormData();
     data.append("category_id", "1");
-    data.append("type", "bonus");
+    data.append("type", "starter");
     data.append("user_id", "6");
     data.append("time", "");
   

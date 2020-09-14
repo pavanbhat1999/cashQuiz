@@ -16,6 +16,7 @@ export class QuizQuestionComponent implements OnInit {
   round : number =1;
   questions = [];
   question : number = 0;
+  questionNow : number = 0;
   rightanswer : number = 0;
   finished = false;
   printQuestion : string;
@@ -70,18 +71,19 @@ onTImerFinished(e){
   console.log(e);
   if (e["action"] == "done")
   {
-    if (this.question<9)
+    if (this.question<4)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
       this.bgcolor = '#0f3356';
       this.question++;
       console.log(this.questions[this.question].mcq_answer_master);
+      this.printQuestion=this.questions[this.question].mq_question;
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
       this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
-      this.printQuestion=this.questions[this.question].mq_question;
+      
       this.restart();
     }
     else{
