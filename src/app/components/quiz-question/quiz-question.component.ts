@@ -13,6 +13,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class QuizQuestionComponent implements OnInit {
   @Output()continueclicked = new EventEmitter();
   amount ;
+  time:number=10;
   redHeartCount : number = 1;
   redHeartUsed =false;
   yellowHeartUsed =false;
@@ -46,6 +47,7 @@ export class QuizQuestionComponent implements OnInit {
   opacity3 : string = "";
   opacity4 : string = "";
   val = "";
+  event = {action: "done", left: 0, status: 3, text: "0"};
   @ViewChild('countdown') counter: CountdownComponent;
   constructor(private service : QuestionService) { }
 
@@ -196,7 +198,9 @@ selectoption1(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity1 = "white";
-  
+  setTimeout(() => {
+    this.onTImerFinished(this.event);
+  }, 2000);
   
 
  
