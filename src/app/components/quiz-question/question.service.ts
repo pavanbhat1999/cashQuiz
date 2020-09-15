@@ -15,11 +15,11 @@ export class QuestionService {
      
      }
      putAmount(rightAnswer : number,round){
-       if(round==1){
-        rightAnswer=rightAnswer*0.2;
-       }
-       else
-          rightAnswer = rightAnswer*0.4;
+      //  if(round==1){
+      //   rightAnswer=rightAnswer*0.2;
+      //  }
+      //  else
+        rightAnswer = rightAnswer*0.08;
         this.amount = this.amount+rightAnswer;
      }
      getAmount(){

@@ -165,7 +165,7 @@ redHeart(){
   this.redHeartCount--;
   console.log("red pressed moving to next question");
   this.questionNow--;
-  
+  this.onTImerFinished(this.event); 
   }
   
 }
@@ -252,6 +252,9 @@ selectoption2(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity2 = "white";
+  setTimeout(() => {
+    this.onTImerFinished(this.event);
+  }, 2000);
  
 }
 selectoption3(){
@@ -265,6 +268,9 @@ selectoption3(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity3 = "white";
+  setTimeout(() => {
+    this.onTImerFinished(this.event);
+  }, 2000);
  
 }
 selectoption4(){
@@ -278,6 +284,9 @@ selectoption4(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity4 = "white";
+  setTimeout(() => {
+    this.onTImerFinished(this.event);
+  }, 2000);
  
 }
 // ------------------------------------------------------Continue to next round----------------------------------------------------
