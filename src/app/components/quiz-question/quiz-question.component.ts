@@ -20,6 +20,8 @@ export class QuizQuestionComponent implements OnInit {
   round : number =1;
   questions = [];
   question : number = 0;
+  question_lv2:number = 9;
+  question_lv3 : number =13;
   questionNow : number = 0;
   rightanswer : number = 0;
   finished = false;
@@ -76,12 +78,17 @@ onTImerFinished(e)
   console.log(e);
   if (e["action"] == "done")
   {
-    if (this.question<4)
+    this.question++;
+    if(this.question==5)
+    this.question=10;
+    if(this.question==13)
+    this.question=14;
+    if (this.question<16)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
       this.bgcolor = '#0f3356';
-      this.question++;
+      
       
       console.log(this.questions[this.question].mcq_answer_master);
       this.printQuestion=this.questions[this.question].mq_question;
@@ -90,45 +97,46 @@ onTImerFinished(e)
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
       this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
-      if(this.question==4)
-      this.question +=5;
+      // if(this.question==4)
+      // this.question_lv2 =9;
       this.restart();
     }
-    else if(this.question>=9&&this.question<12){
+   
+    // else if(this.question>=9&&this.question<12){
 
-      console.log("question complete goto next");
-      this.selectedoption = false;
-      this.bgcolor = '#0f3356';
-      this.question++;
+    //   console.log("question complete goto next");
+    //   this.selectedoption = false;
+    //   this.bgcolor = '#0f3356';
+    //   this.question++;
       
-      console.log(this.questions[this.question].mcq_answer_master);
-      this.printQuestion=this.questions[this.question].mq_question;
-      this.questionNow++;
-      this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
-      this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
-      this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
-      this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
-      if(this.question==12)
-      this.question +=1;
-      this.restart();
-    }
-    else if(this.question<20&&this.questionNow<9)
-    {
-      console.log("question complete goto next");
-      this.selectedoption = false;
-      this.bgcolor = '#0f3356';
-      this.question++;
+    //   console.log(this.questions[this.question].mcq_answer_master);
+    //   this.printQuestion=this.questions[this.question].mq_question;
+    //   this.questionNow++;
+    //   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
+    //   this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
+    //   this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
+    //   this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
+    //   if(this.question==12)
+    //   this.question +=1;
+    //   this.restart();
+    // }
+    // else if(this.question<20&&this.questionNow<9)
+    // {
+    //   console.log("question complete goto next");
+    //   this.selectedoption = false;
+    //   this.bgcolor = '#0f3356';
+    //   this.question++;
       
-      console.log(this.questions[this.question].mcq_answer_master);
-      this.printQuestion=this.questions[this.question].mq_question;
-      this.questionNow++;
-      this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
-      this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
-      this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
-      this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
+    //   console.log(this.questions[this.question].mcq_answer_master);
+    //   this.printQuestion=this.questions[this.question].mq_question;
+    //   this.questionNow++;
+    //   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
+    //   this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
+    //   this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
+    //   this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
       
-      this.restart();
-    }
+    //   this.restart();
+    // }
     else{
       this.finished = true;
       
