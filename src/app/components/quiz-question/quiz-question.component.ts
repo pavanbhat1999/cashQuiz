@@ -15,6 +15,8 @@ export class QuizQuestionComponent implements OnInit {
   amount ;
   redHeartCount : number = 1;
   redHeartUsed =false;
+  yellowHeartUsed =false;
+  yellowHeartCount : number =2;
   round : number =1;
   questions = [];
   question : number = 0;
@@ -92,7 +94,7 @@ onTImerFinished(e)
       this.question +=5;
       this.restart();
     }
-    else if(this.question<13){
+    else if(this.question>=9&&this.question<12){
 
       console.log("question complete goto next");
       this.selectedoption = false;
@@ -137,6 +139,7 @@ onTImerFinished(e)
 }
 restart() {
   this.redHeartUsed =false;
+  this.yellowHeartUsed = false;
  setTimeout(()=>this.counter.restart()) 
 }
 begin(){
@@ -146,15 +149,24 @@ begin(){
 
 redHeart(){
   
-  if(this.redHeartCount>0)
+  if(this.redHeartCount>0&&!this.redHeartUsed)
   {
-    this.redHeartUsed = true;
+  this.redHeartUsed = true;
   this.redHeartCount--;
   console.log("red pressed moving to next question");
   this.questionNow--;
   
   }
   
+}
+
+yellowHeart(){
+if(this.yellowHeartCount>0&&!this.yellowHeartUsed)
+{
+  this.yellowHeartUsed = true;
+  this.yellowHeartCount--;
+  console.log("yellow heart Used");
+}
 }
 //---------------------------------- Option Selected properties-----------------------------------------------
 selectoption1(){
