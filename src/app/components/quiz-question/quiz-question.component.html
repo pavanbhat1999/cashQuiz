@@ -112,19 +112,19 @@
         </div>
             <!-- Selected Not Clickable-->
         <div *ngIf="selectedoption" class="options">
-            <div [style] class="option a1">
+            <div [style.background]="rightOption[0]" class="option a1">
                 <div class="numberCircle">A</div>
                 <p [style.color]="opacity1">{{ option1 }}</p>
             </div>
-            <div  class="option a2">
+            <div [style.background]="rightOption[1]"  class="option a2">
                 <div class="numberCircle">B</div>
                 <p [style.color]="opacity2">{{ option2 }}</p>
             </div>
-            <div  class="option a3">
+            <div [style.background]="rightOption[2]"   class="option a3">
                 <div class="numberCircle">C</div>
                 <p [style.color]="opacity3">{{ option3 }}</p>
             </div>  
-            <div  class="option a4">
+            <div [style.background]="rightOption[3]"  class="option a4">
                 <div class="numberCircle">D</div>
                 <p [style.color]="opacity4">{{ option4 }}</p>
             </div>

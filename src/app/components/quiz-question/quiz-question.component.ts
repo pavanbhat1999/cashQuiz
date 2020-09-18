@@ -25,6 +25,7 @@ export class QuizQuestionComponent implements OnInit {
   question_lv3 : number =13;
   questionNow : number = 0;
   rightanswer : number = 0;
+  rightOption = [];
   finished = false;
   printQuestion : string;
   //printQuestionNumber : string;
@@ -71,6 +72,20 @@ this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
 this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
 this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
 this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
+if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
+this.rightOption[0]="green";
+if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
+this.rightOption[1]="green";
+if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
+this.rightOption[2]="green";
+if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
+this.rightOption[3]="green";
+// var i;
+// for(i=0;i<5;i++)
+// {
+//   if(this.questions[this.question].mcq_answer_master[i].mc_is_true_answer=="right")
+//   this.rightOption[i]="green";
+// }
 this.printQuestion=this.questions[this.question].mq_question;
 this.loadComplete = true;
 
@@ -80,6 +95,7 @@ onTImerFinished(e)
   console.log(e);
   if (e["action"] == "done")
   {
+    this.rightOption=[];
     this.question++;
     if(this.question==5)
     this.question=10;
@@ -99,8 +115,18 @@ onTImerFinished(e)
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
       this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
-      // if(this.question==4)
-      // this.question_lv2 =9;
+     
+        if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
+        this.rightOption[0]="green";
+        if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
+        this.rightOption[1]="green";
+        if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
+        this.rightOption[2]="green";
+        if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
+        this.rightOption[3]="green";
+      
+      //// if(this.question==4)
+      //// this.question_lv2 =9;
       this.restart();
     }
    
@@ -150,6 +176,7 @@ onTImerFinished(e)
 restart() {
   this.redHeartUsed =false;
   this.yellowHeartUsed = false;
+  
  setTimeout(()=>this.counter.restart()) 
 }
 begin(){
@@ -178,6 +205,11 @@ if(this.yellowHeartCount>0&&!this.yellowHeartUsed)
   console.log("yellow heart Used");
 }
 }
+// Marking the correct Answer
+markCorrect(){
+
+}
+
 //---------------------------------- Option Selected properties-----------------------------------------------
 selectoption1(){
   console.log(this.questions[this.question].mcq_answer_master);
@@ -328,6 +360,14 @@ callfun1(response){
   this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
   this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
   this.printQuestion=this.questions[this.question].mq_question;
+  if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
+  this.rightOption[0]="green";
+  if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
+  this.rightOption[1]="green";
+  if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
+  this.rightOption[2]="green";
+  if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
+  this.rightOption[3]="green";
   this.loadComplete = true;
   
   }
