@@ -44,7 +44,7 @@ console.log(this.auth_success)
 
 }
 check(){
-  alert("Log in successful");
+ // alert("Log in successful");
  //this.login.emit("true");
   this.router.navigate(['startPage']);
 }

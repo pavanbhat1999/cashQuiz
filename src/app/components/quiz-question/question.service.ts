@@ -20,6 +20,7 @@ export class QuestionService {
       //  }
       //  else
         rightAnswer = rightAnswer*0.08;
+        rightAnswer.toFixed(2);
         this.amount = this.amount+rightAnswer;
      }
      getAmount(){

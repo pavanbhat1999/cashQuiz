@@ -198,12 +198,17 @@ selectoption1(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity1 = "white";
+  this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);
   }, 2000);
   
 
  
+}
+pauseTimer(){
+  this.counter.ngOnDestroy();
+  
 }
 // optionStyles()
 // {
@@ -252,6 +257,7 @@ selectoption2(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity2 = "white";
+  this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);
   }, 2000);
@@ -268,6 +274,7 @@ selectoption3(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity3 = "white";
+  this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);
   }, 2000);
@@ -284,6 +291,7 @@ selectoption4(){
   this.selectedoption = true;
   this.initOpacity();
   this.opacity4 = "white";
+  this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);
   }, 2000);
