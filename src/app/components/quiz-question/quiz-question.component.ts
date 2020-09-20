@@ -17,6 +17,7 @@ export class QuizQuestionComponent implements OnInit {
   redHeartCount : number = 1;
   redHeartUsed =false;
   yellowHeartUsed =false;
+  neverHide = [false,false,false,false]
   yellowHeartCount : number =2;
   round : number =1;
   questions = [];
@@ -48,6 +49,7 @@ export class QuizQuestionComponent implements OnInit {
   opacity3 : string = "";
   opacity4 : string = "";
   val = "";
+  j:number=0;
   event = {action: "done", left: 0, status: 3, text: "0"};
   @ViewChild('countdown') counter: CountdownComponent;
   constructor(private service : QuestionService) { }
@@ -72,14 +74,8 @@ this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
 this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
 this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
 this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
-if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
-this.rightOption[0]="green";
-if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
-this.rightOption[1]="green";
-if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
-this.rightOption[2]="green";
-if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
-this.rightOption[3]="green";
+this.markCorrect()
+
 // var i;
 // for(i=0;i<5;i++)
 // {
@@ -116,14 +112,7 @@ onTImerFinished(e)
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
       this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
      
-        if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
-        this.rightOption[0]="green";
-        if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
-        this.rightOption[1]="green";
-        if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
-        this.rightOption[2]="green";
-        if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
-        this.rightOption[3]="green";
+      this.markCorrect()
       
       //// if(this.question==4)
       //// this.question_lv2 =9;
@@ -176,6 +165,7 @@ onTImerFinished(e)
 restart() {
   this.redHeartUsed =false;
   this.yellowHeartUsed = false;
+  this.neverHide = [false,false,false,false]
   
  setTimeout(()=>this.counter.restart()) 
 }
@@ -202,12 +192,45 @@ if(this.yellowHeartCount>0&&!this.yellowHeartUsed)
 {
   this.yellowHeartUsed = true;
   this.yellowHeartCount--;
+  let numbers = [0,1,2,3,0];
+  this.neverHide=[true,true,true,true];
+for (let j of numbers) {
+  console.log(j);
+  
+ if(this.questions[this.question].mcq_answer_master[j].mc_is_true_answer=="right")
+  {
+     this.neverHide[j]=false;
+     this.neverHide[j+1]=false;
+  }
+  
+  
+     
+}
   console.log("yellow heart Used");
 }
 }
 // Marking the correct Answer
 markCorrect(){
-
+  
+  // for(this.j=0;this.j<5;this.j++){
+  //   if(this.questions[this.question].mcq_answer_master[this.j].mc_is_true_answer=="right")
+  //   this.rightOption[this.j]="green";
+  // }
+  let numbers = [0,1, 2, 3];
+for (let j of numbers) {
+  console.log(j);
+  if(this.questions[this.question].mcq_answer_master[j].mc_is_true_answer=="right")
+     this.rightOption[j]="green";
+     
+}
+  // if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
+  // this.rightOption[0]="green";
+  // if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
+  // this.rightOption[1]="green";
+  // if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
+  // this.rightOption[2]="green";
+  // if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
+  // this.rightOption[3]="green";
 }
 
 //---------------------------------- Option Selected properties-----------------------------------------------
@@ -360,13 +383,7 @@ callfun1(response){
   this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
   this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
   this.printQuestion=this.questions[this.question].mq_question;
-  if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
-  this.rightOption[0]="green";
-  if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
-  this.rightOption[1]="green";
-  if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
-  this.rightOption[2]="green";
-  if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
+  this.markCorrect()
   this.rightOption[3]="green";
   this.loadComplete = true;
   

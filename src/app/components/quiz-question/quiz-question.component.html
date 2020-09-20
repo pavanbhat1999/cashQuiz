@@ -92,20 +92,20 @@
         <div *ngIf="!selectedoption" class="options">
 
                 <!-- Not selected Clickable -->
-                <div  (click)="selectoption1()" class="option a1">
+                <div [hidden]="neverHide[0]"  (click)="selectoption1()" class="option a1">
                     <div class="numberCircle">A</div>
                     <p>{{ option1 }}</p>
                 </div>
-                <div  (click)="selectoption2()" class="option a2">
+                <div [hidden]="neverHide[1]" (click)="selectoption2()" class="option a2">
                     <div class="numberCircle">B</div>
                     <p>{{ option2 }}</p>
                 </div>
-                <div  (click)="selectoption3()" class="option a3">
+                <div [hidden]="neverHide[2]" (click)="selectoption3()" class="option a3">
                     <div class="numberCircle">C</div>
                     <p>{{ option3 }}</p>
                 </div>
             
-                <div  (click)="selectoption4()" class="option a4">
+                <div [hidden]="neverHide[3]" (click)="selectoption4()" class="option a4">
                     <div class="numberCircle">D</div>
                     <p>{{ option4 }}</p>
                 </div>

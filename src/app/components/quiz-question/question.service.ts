@@ -19,8 +19,16 @@ export class QuestionService {
       //   rightAnswer=rightAnswer*0.2;
       //  }
       //  else
+      if(rightAnswer>=8)
+      {
+            //Goto bonus Round 
+            rightAnswer=8*0.08;
+      }
+      else{
         rightAnswer = rightAnswer*0.08;
+        }
         rightAnswer.toFixed(2);
+        
         this.amount = this.amount+rightAnswer;
      }
      getAmount(){
