@@ -201,6 +201,8 @@ for (let j of numbers) {
   {
      this.neverHide[j]=false;
      this.neverHide[j+1]=false;
+     if(j==3)
+     this.neverHide[0]=false;
   }
   
   
@@ -359,6 +361,7 @@ continueClicked()
   this.rightanswer = 0;
   this.question = 0;
   this.questionNow = 0;
+  this.neverHide=[false,false,false,false];
   console.log("amount= "+this.rightanswer);
   console.log("GotAmount="+this.service.getAmount());
   this.loadComplete = false;
