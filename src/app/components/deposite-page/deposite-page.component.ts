@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import {DepositeListService} from '../deposite-page/deposite-list.service';
+import {Router} from '@angular/router'
+
 @Component({
   selector: 'app-deposite-page',
   templateUrl: './deposite-page.component.html',
@@ -14,7 +16,7 @@ amount = [];
 detail = [];
 detailDisplay;
 continuePressed = true;
-  constructor(private service : DepositeListService) { }
+  constructor(private service : DepositeListService,public router : Router) { }
 
   ngOnInit(): void {
     this.service.getfun()
@@ -56,7 +58,7 @@ add(h){
 continue(){
   if(this.continuePressed==false)
   {
-
+    this.router.navigate(['startPage'])
   }
   else
   this.continuePressed = false;
