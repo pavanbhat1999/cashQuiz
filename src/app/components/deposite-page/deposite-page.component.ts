@@ -22,9 +22,16 @@ detail = [];
     this.callfun(response);
     });
   }
-callfun(response) {
-this.deposite = response;
-this.amount[0]=this.deposite[0].d_amount;
-this.detail[0]=this.deposite[0].d_description;
+callfun(response)
+ {
+    this.deposite = response;
+    let j= [0,1,2,3,4,5,6,7]
+    for(let i of j)
+    {
+   
+    console.log(i);
+    this.amount[i]=this.deposite[i].d_amount;
+    this.detail[i]=this.deposite[i].d_description;
+}
 }
 }
