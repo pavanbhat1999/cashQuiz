@@ -12,6 +12,7 @@ count_y : number = 2;
 deposite ;
 amount = [];
 detail = [];
+detailDisplay;
   constructor(private service : DepositeListService) { }
 
   ngOnInit(): void {
@@ -32,6 +33,10 @@ callfun(response)
     console.log(i);
     this.amount[i]=this.deposite[i].d_amount;
     this.detail[i]=this.deposite[i].d_description;
-}
+    }
+  }
+
+detailfetch(id){
+this.detailDisplay = this.detail[id];
 }
 }
