@@ -15,7 +15,7 @@ export class DepositeListService {
     var data = new FormData();
     
   
-    return this.http.post<Deposites>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API/quiz/deposite/deposite_list',data).pipe(map(response => response.data))  
+    return this.http.post<Deposites>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/deposite/deposite_list',data).pipe(map(response => response.data))  
   }
 }
 
