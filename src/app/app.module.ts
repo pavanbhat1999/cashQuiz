@@ -17,7 +17,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { DepositePageComponent } from './deposite-page/deposite-page.component';
+import { DepositePageComponent } from './components/deposite-page/deposite-page.component';
 
 @NgModule({
   declarations: [
