@@ -31,13 +31,13 @@
      <p [innerHTML]="detailDisplay"></p>
     </div>
 </div>
-<div [hidden]="false" class="heart-deposite">
+<div [hidden]="continuePressed" class="heart-deposite">
   <p>Enter Extra hearts you want to Buy</p>
   <p><b>-</b> <i style="color:red" class="fa fa-heart" aria-hidden="true"></i>  <b>+</b>  {{count_r}}</p>
   <p><b>-</b>  <i style="color:yellow" class="fa fa-heart" aria-hidden="true"></i>  <b>+</b>  {{count_y}}</p>
   <p>Total Amount = {{"totalAmount"}}</p>
 </div>
 <div class="footer">
-    <button  class="btn btn-primary">Contiue</button>
+    <button (click)="continue()"   class="btn btn-primary">Contiue</button>
 </div>
   

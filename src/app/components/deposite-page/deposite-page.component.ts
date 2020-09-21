@@ -13,6 +13,7 @@ deposite ;
 amount = [];
 detail = [];
 detailDisplay;
+continuePressed = true;
   constructor(private service : DepositeListService) { }
 
   ngOnInit(): void {
@@ -38,5 +39,8 @@ callfun(response)
 
 detailfetch(id){
 this.detailDisplay = this.detail[id];
+}
+continue(){
+this.continuePressed = !this.continuePressed;
 }
 }
