@@ -9,6 +9,9 @@ import {DepositeListService} from '../deposite-page/deposite-list.service';
 export class DepositePageComponent implements OnInit {
 count_r : number =1;
 count_y : number = 2;
+deposite ;
+amount = [];
+detail = [];
   constructor(private service : DepositeListService) { }
 
   ngOnInit(): void {
@@ -16,8 +19,12 @@ count_y : number = 2;
     .subscribe(response => 
     {
     console.log(response);
-    
+    this.callfun(response);
     });
   }
-
+callfun(response) {
+this.deposite = response;
+this.amount[0]=this.deposite[0].d_amount;
+this.detail[0]=this.deposite[0].d_description;
+}
 }

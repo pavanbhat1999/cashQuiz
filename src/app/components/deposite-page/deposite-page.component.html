@@ -6,7 +6,7 @@
 
 
         Amount</p>
-    <a href="#">$1.99</a>
+    <a href="#">${{amount[0]}}</a>
     <a href="#">$3.99</a>
     <a href="#">$9.99</a>
     <a href="#">$14.99</a>
@@ -22,12 +22,13 @@
         <i class="fa fa-calendar" aria-hidden="true"></i>
         Details</p>
       <div class="details">
-        <p>Get 2 free Yellow Heart</p>
+        <!-- <p>Get 2 free Yellow Heart</p>
         <p>Get 1 Free Red Heart</p>
         <p>Earn upto ---- in starter round</p>
         <p>Earn upto ---- in Bonus</p>
         <p>Earn upto ---- in super Bonus</p>
-        <p>Earn upto ___ Jackpot round</p>
+        <p>Earn upto ___ Jackpot round</p> -->
+     <p [innerHTML]="detail[0]"></p>
     </div>
 </div>
 <div [hidden]="false" class="heart-deposite">
