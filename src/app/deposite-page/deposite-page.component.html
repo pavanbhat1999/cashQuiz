@@ -2,20 +2,39 @@
 <!-- Side navigation -->
 <div class="sidenav">
     <p style="text-align: center;background: #0f3356;color: aliceblue;margin-bottom: 20px;">
-        
+        <i class="fas fa-dollar-sign"></i>
+
+
         Amount</p>
     <a href="#">$1.99</a>
-    <a href="#">$2.99</a>
     <a href="#">$3.99</a>
-    <a href="#">$4.99</a>
+    <a href="#">$9.99</a>
+    <a href="#">$14.99</a>
+    <a href="#">$24.99</a>
+    <a href="#">$49.99</a>
+    <a href="#">$74.99</a>
+    <a href="#">$99.99</a>
   </div>
   
   <!-- Page content -->
   <div class="main">
-      <p>Details</p>
+      <p>
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        Details</p>
       <div class="details">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, natus hic molestiae necessitatibus quis, quo minus nisi vel cumque excepturi expedita, voluptatum ea dolor quia inventore nobis. Amet, necessitatibus ex?
-      </div>
+        <p>Get 2 free Yellow Heart</p>
+        <p>Get 1 Free Red Heart</p>
+        <p>Earn upto ---- in starter round</p>
+        <p>Earn upto ---- in Bonus</p>
+        <p>Earn upto ---- in super Bonus</p>
+        <p>Earn upto ___ Jackpot round</p>
+    </div>
+</div>
+<div [hidden]="false" class="heart-deposite">
+  <p>Enter Extra hearts you want to Buy</p>
+  <p><b>-</b> <i style="color:red" class="fa fa-heart" aria-hidden="true"></i>  <b>+</b>  {{count_r}}</p>
+  <p><b>-</b>  <i style="color:yellow" class="fa fa-heart" aria-hidden="true"></i>  <b>+</b>  {{count_y}}</p>
+  <p>Total Amount = {{"totalAmount"}}</p>
 </div>
 <div class="footer">
     <button  class="btn btn-primary">Contiue</button>
