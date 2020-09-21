@@ -7,7 +7,7 @@ import {DepositeListService} from '../deposite-page/deposite-list.service';
   styleUrls: ['./deposite-page.component.css']
 })
 export class DepositePageComponent implements OnInit {
-count_r : number =1;
+count_r : number = 1;
 count_y : number = 2;
 deposite ;
 amount = [];
@@ -40,7 +40,25 @@ callfun(response)
 detailfetch(id){
 this.detailDisplay = this.detail[id];
 }
-continue(){
-this.continuePressed = !this.continuePressed;
+
+minus(h){
+  if(h==1&&this.count_r>1)
+  this.count_r--;
+  if(h==2&&this.count_y>2)
+  this.count_y--;
 }
+add(h){
+  if(h==1)
+  this.count_r++;
+  if(h==2)
+  this.count_y++;
+}
+continue(){
+  if(this.continuePressed==false)
+  {
+
+  }
+  else
+  this.continuePressed = false;
+  }
 }
