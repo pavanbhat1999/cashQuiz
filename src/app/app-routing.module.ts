@@ -5,11 +5,13 @@ import {QuizQuestionComponent} from './components/quiz-question/quiz-question.co
 import {LogInComponent} from './components/log-in/log-in.component';
 import {RegisterComponent} from './components/register/register.component';
 import {DepositePageComponent} from './components/deposite-page/deposite-page.component';
+import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 const routes: Routes = [{path:'startPage',component:StartQuizComponent },
                         {path:'questions',component:QuizQuestionComponent },
                         {path:'login',component:LogInComponent },
                         {path:'register',component:RegisterComponent },
-                        {path:'depositePage',component:DepositePageComponent }
+                        {path:'depositePage',component:DepositePageComponent },
+                        {path:'paymentPage',component:PaymentPageComponent }
                       ];
 
 @NgModule({

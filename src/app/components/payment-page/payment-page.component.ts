@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MainServiceService} from '../main-service.service'
 @Component({
   selector: 'app-payment-page',
   templateUrl: './payment-page.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(service : MainServiceService) { }
 
   ngOnInit(): void {
+  }
+  contnue(){
+
   }
 
 }

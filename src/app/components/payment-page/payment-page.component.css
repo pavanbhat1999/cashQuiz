@@ -1,0 +1,56 @@
+.bg {
+    /* The image used */
+    background-image: url("app_main_bg.png");
+    
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  .container{
+      
+     height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .alipay{
+      width: 75%;
+      
+      background: grey;
+      
+      margin: 10%;
+      border-radius: 2rem;
+      text-align: center;
+  }
+  .green-money{
+    width: 75%;
+    
+    background: grey;
+    border-radius: 2rem;
+    text-align: center;
+
+    margin: 10%;
+}
+img{
+    height: 100%;
+    width: 100%;
+    padding: 10%;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 2%;
+  }
