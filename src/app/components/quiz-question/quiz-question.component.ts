@@ -3,6 +3,8 @@ import {QuestionService}  from '../quiz-question/question.service';
 import { from } from 'rxjs';
 import { CountdownComponent } from 'ngx-countdown';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import {MainServiceService} from '../main-service.service';
+
 
 @Component({
   selector: 'app-quiz-question',
@@ -52,7 +54,7 @@ export class QuizQuestionComponent implements OnInit {
   j:number=0;
   event = {action: "done", left: 0, status: 3, text: "0"};
   @ViewChild('countdown') counter: CountdownComponent;
-  constructor(private service : QuestionService) { }
+  constructor(private service : QuestionService,private mainservice : MainServiceService) { }
 
   ngOnInit(): void {
     
@@ -62,6 +64,7 @@ export class QuizQuestionComponent implements OnInit {
     console.log(response);
     this.callfun(response);
     });
+   console.log("id from main="+this.mainservice.d_number);
    
   }
 callfun(response){

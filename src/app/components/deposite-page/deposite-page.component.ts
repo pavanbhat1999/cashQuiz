@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import {DepositeListService} from '../deposite-page/deposite-list.service';
+import {MainServiceService} from '../main-service.service'
 import {Router} from '@angular/router'
 
 @Component({
@@ -16,7 +17,7 @@ amount = [];
 detail = [];
 detailDisplay;
 continuePressed = true;
-  constructor(private service : DepositeListService,public router : Router) { }
+  constructor(private service : DepositeListService,public router : Router,private mainservice : MainServiceService) { }
 
   ngOnInit(): void {
     this.service.getfun()
@@ -41,6 +42,8 @@ callfun(response)
 
 detailfetch(id){
 this.detailDisplay = this.detail[id];
+this.mainservice.putDeposite(id);
+
 }
 
 minus(h){
