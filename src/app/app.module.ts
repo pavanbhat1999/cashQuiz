@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DepositePageComponent } from './components/deposite-page/deposite-page.component';
+import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DepositePageComponent } from './components/deposite-page/deposite-page.
     InnerComponent,
     QuizQuestionComponent,
     EmptyPageComponent,
-    DepositePageComponent
+    DepositePageComponent,
+    PaymentPageComponent
   ],
   imports: [
     BrowserModule,
