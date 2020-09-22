@@ -16,6 +16,7 @@ export class QuizQuestionComponent implements OnInit {
   @Output()continueclicked = new EventEmitter();
   amount ;
   deposite ;
+  bonusRound = false;
   time:number=10;
   redHeartCount : number = 1;
   redHeartUsed =false;
@@ -174,6 +175,10 @@ onTImerFinished(e)
       
       this.service.putAmount(this.rightanswer,this.round);
       this.amount = this.service.getAmount();
+      if(this.rightanswer>=8)
+      {
+        this.bonusRound = true;
+      }
     }
   }
 }
@@ -372,6 +377,12 @@ selectoption4(){
 // ------------------------------------------------------Continue to next round----------------------------------------------------
 continueClicked()
 {
+
+  if(this.rightanswer>=8)
+  {
+    alert("You have entered Bonus round");
+    this.bonusRoundQuestions();
+  }
   this.round++;
   this.rightanswer = 0;
   this.question = 0;
@@ -406,4 +417,8 @@ callfun1(response){
   this.loadComplete = true;
   
   }
+ bonusRoundQuestions(){
+
+ } 
 }
+

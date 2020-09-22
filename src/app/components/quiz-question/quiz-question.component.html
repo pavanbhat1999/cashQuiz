@@ -22,6 +22,7 @@
   class="bg1"
   *ngIf="finished && loadComplete"
 >
+
   <p>
     <b style="color: white">Round: {{ round }} </b>
   </p>
@@ -40,6 +41,7 @@
     />
   </div>
   <p><b style="color: green">YOU WON</b></p>
+  <p *ngIf="bonusRound" > <b style="color: green">You have entered the bonus Round </b></p>
   <button
     style="padding: 2% 20%; border-radius: 2rem"
     (click)="continueClicked()"
