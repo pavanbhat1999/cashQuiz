@@ -19,6 +19,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DepositePageComponent } from './components/deposite-page/deposite-page.component';
 import { PaymentPageComponent } from './components/payment-page/payment-page.component';
+import { GreenMoneyDetailComponent } from './components/green-money-detail/green-money-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PaymentPageComponent } from './components/payment-page/payment-page.com
     QuizQuestionComponent,
     EmptyPageComponent,
     DepositePageComponent,
-    PaymentPageComponent
+    PaymentPageComponent,
+    GreenMoneyDetailComponent
   ],
   imports: [
     BrowserModule,
