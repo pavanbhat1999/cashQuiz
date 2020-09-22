@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 export class QuestionService {
   form: FormGroup;
   amount : number=0 ;
+  each_amount = 0;
   constructor( 
     private http: HttpClient) {
      
@@ -22,10 +23,10 @@ export class QuestionService {
       if(rightAnswer>=8)
       {
             //Goto bonus Round 
-            rightAnswer=8*0.08;
+            rightAnswer=8*this.each_amount;
       }
       else{
-        rightAnswer = rightAnswer*0.08;
+        rightAnswer = rightAnswer*this.each_amount;
         }
         rightAnswer.toFixed(2);
         

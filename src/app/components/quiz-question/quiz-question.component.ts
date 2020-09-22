@@ -15,6 +15,7 @@ import {MainServiceService} from '../main-service.service';
 export class QuizQuestionComponent implements OnInit {
   @Output()continueclicked = new EventEmitter();
   amount ;
+  deposite ;
   time:number=10;
   redHeartCount : number = 1;
   redHeartUsed =false;
@@ -65,7 +66,7 @@ export class QuizQuestionComponent implements OnInit {
     this.callfun(response);
     });
    console.log("id from main="+this.mainservice.d_number);
-   
+   this.mainservice.getfun_deposite().subscribe(response=>{console.log(response);this.callfun_deposite(response,this.mainservice.d_number)})
   }
 callfun(response){
 console.log("called")
@@ -87,6 +88,17 @@ this.markCorrect()
 // }
 this.printQuestion=this.questions[this.question].mq_question;
 this.loadComplete = true;
+
+}
+callfun_deposite(response,number){
+  this.deposite = response;
+  
+ console.log("d_Amount="+this.deposite[number].d_r_amt_st_p_question)
+  this.service.each_amount = this.deposite[number].d_r_amt_st_p_question;
+  // this.amount=this.deposite[number].d_amount;
+  
+  
+  
 
 }
 onTImerFinished(e)
