@@ -46,7 +46,7 @@ console.log(this.auth_success)
 check(){
  // alert("Log in successful");
  //this.login.emit("true");
-  this.router.navigate(['depositePage']); 
+  this.router.navigate(['startPage']); 
 }
 uncheck(){
   alert("Log In Unsuccessful Register or click forgot password")

@@ -58,7 +58,7 @@ add(h){
 continue(){
   if(this.continuePressed==false)
   {
-    this.router.navigate(['startPage'])
+    this.router.navigate(['paymentPage'])
   }
   else
   this.continuePressed = false;

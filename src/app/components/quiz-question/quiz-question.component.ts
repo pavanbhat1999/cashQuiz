@@ -387,7 +387,7 @@ callfun1(response){
   this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
   this.printQuestion=this.questions[this.question].mq_question;
   this.markCorrect()
-  this.rightOption[3]="green";
+  // this.rightOption[3]="green";
   this.loadComplete = true;
   
   }
