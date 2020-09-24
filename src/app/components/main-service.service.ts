@@ -10,6 +10,8 @@ import {Deposites} from '../components/deposite-page/deposite';
 })
 export class MainServiceService {
   d_number : number = 0;
+  redheart : number = 0;
+  yellowheart : number = 0;
   constructor(private http: HttpClient) { }
 
   putDeposite(id){

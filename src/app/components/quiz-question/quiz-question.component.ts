@@ -70,6 +70,8 @@ export class QuizQuestionComponent implements OnInit {
     this.callfun(response);
     });
    console.log("id from main="+this.mainservice.d_number);
+   console.log("red=",this.mainservice.redheart);
+   
    this.mainservice.getfun_deposite().subscribe(response=>{console.log(response);this.callfun_deposite(response,this.mainservice.d_number)})
   }
 

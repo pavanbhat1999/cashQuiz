@@ -49,6 +49,7 @@ this.mainservice.putDeposite(id);
 minus(h){
   if(h==1&&this.count_r>1)
   this.count_r--;
+  
   if(h==2&&this.count_y>2)
   this.count_y--;
 }
@@ -61,7 +62,9 @@ add(h){
 continue(){
   if(this.continuePressed==false)
   {
-    this.router.navigate(['paymentPage'])
+    this.router.navigate(['paymentPage']);
+    this.mainservice.redheart=this.count_r;
+    this.mainservice.yellowheart=this.count_y;
   }
   else
   this.continuePressed = false;
