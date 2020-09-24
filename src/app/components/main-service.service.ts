@@ -18,6 +18,9 @@ export class MainServiceService {
     console.log("deposite="+id);
     this.d_number = id;
   }
+  getDeposite(){
+    
+  }
   getfun()
   {
     var data = new FormData();
