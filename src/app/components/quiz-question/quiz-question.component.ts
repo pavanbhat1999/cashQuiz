@@ -17,6 +17,8 @@ export class QuizQuestionComponent implements OnInit {
   amount ;
   deposite ;
   bonusRound = false;
+  bonusPlay = false;
+  superbonusround = false;
   time:number=10;
   redHeartCount : number = 1;
   redHeartUsed =false;
@@ -30,6 +32,7 @@ export class QuizQuestionComponent implements OnInit {
   question_lv3 : number =13;
   questionNow : number = 0;
   rightanswer : number = 0;
+  wronganswer : number = 0;
   rightOption = [];
   finished = false;
   printQuestion : string;
@@ -69,6 +72,10 @@ export class QuizQuestionComponent implements OnInit {
    console.log("id from main="+this.mainservice.d_number);
    this.mainservice.getfun_deposite().subscribe(response=>{console.log(response);this.callfun_deposite(response,this.mainservice.d_number)})
   }
+
+
+
+// USer defined functions start here  
 callfun(response){
 console.log("called")
 this.questions = response;
@@ -91,17 +98,19 @@ this.printQuestion=this.questions[this.question].mq_question;
 this.loadComplete = true;
 
 }
+
+// ------------------------------------------this is for deposites
 callfun_deposite(response,number){
   this.deposite = response;
   
  console.log("d_Amount="+this.deposite[number].d_r_amt_st_p_question)
   this.service.each_amount = this.deposite[number].d_r_amt_st_p_question;
   // this.amount=this.deposite[number].d_amount;
-  
-  
-  
 
 }
+
+
+//---------------------------------------------------------------------------
 onTImerFinished(e)
 {
   console.log(e);
@@ -109,11 +118,17 @@ onTImerFinished(e)
   {
     this.rightOption=[];
     this.question++;
+    if(this.wronganswer>1&&this.bonusRound)
+    {
+      alert("you lost bonmus round");
+      this.finished = true;
+      
+    }
     if(this.question==5)
     this.question=10;
     if(this.question==13)
     this.question=14;
-    if (this.question<16)
+    if (this.question<16&&!this.finished)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
@@ -178,6 +193,11 @@ onTImerFinished(e)
       if(this.rightanswer>=8)
       {
         this.bonusRound = true;
+      }
+      if(this.rightanswer>=9&&this.bonusPlay)
+      {
+        console.log("superbonus round");
+        this.superbonusround = true;
       }
     }
   }
@@ -270,7 +290,7 @@ selectoption1(){
   if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="wrong")
   {
   this.bgcolor = '#f64225';
- 
+  this.wronganswer++;
   }
   this.selectedoption = true;
   this.initOpacity();
@@ -329,6 +349,7 @@ selectoption2(){
   if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="wrong")
   {
   this.bgcolor = 'red';
+  this.wronganswer++;
   
   }
   this.selectedoption = true;
@@ -347,7 +368,10 @@ selectoption3(){
     this.rightanswer ++;
     }
   if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="wrong")
+  {
   this.bgcolor = 'red';
+  this.wronganswer++;
+  }
   this.selectedoption = true;
   this.initOpacity();
   this.opacity3 = "white";
@@ -364,7 +388,10 @@ selectoption4(){
     this.rightanswer ++;
     }
   if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="wrong")
-  this.bgcolor = 'red';
+  {
+    this.bgcolor = 'red';
+    this.wronganswer++;
+    }
   this.selectedoption = true;
   this.initOpacity();
   this.opacity4 = "white";
@@ -378,28 +405,37 @@ selectoption4(){
 continueClicked()
 {
 
-  if(this.rightanswer>=8)
+  if(this.rightanswer>=8&&!this.superbonusround)
   {
     alert("You have entered Bonus round");
     this.bonusRoundQuestions();
   }
-  this.round++;
-  this.rightanswer = 0;
-  this.question = 0;
-  this.questionNow = 0;
-  this.neverHide=[false,false,false,false];
-  console.log("amount= "+this.rightanswer);
-  console.log("GotAmount="+this.service.getAmount());
-  this.loadComplete = false;
-  this.finished = false;
-  this.selectedoption = false;
-  this.bgcolor = '#0f3356';
-  this.service.getfun()
-    .subscribe(response => 
-    {
-    console.log(response);
-    this.callfun1(response);
-    });
+  else if(this.bonusPlay&&this.superbonusround){
+      alert("This is super bonus Round");
+      this.superbonusRoundQuestions();
+  }
+  else
+  {
+    this.round++;
+    this.rightanswer = 0;
+    this.wronganswer = 0;
+    this.bonusRound = false;
+    this.question = 0;
+    this.questionNow = 0;
+    this.neverHide=[false,false,false,false];
+    console.log("amount= "+this.rightanswer);
+    console.log("GotAmount="+this.service.getAmount());
+    this.loadComplete = false;
+    this.finished = false;
+    this.selectedoption = false;
+    this.bgcolor = '#0f3356';
+    this.service.getfun()
+      .subscribe(response => 
+      {
+      console.log(response);
+      this.callfun1(response);
+      });
+    }
 }
 callfun1(response){
   console.log("called")
@@ -418,7 +454,82 @@ callfun1(response){
   
   }
  bonusRoundQuestions(){
+   console.log("This is bonus");
+   this.bonusPlay = true;
+  this.rightanswer = 0;
+  this.wronganswer = 0;
+  this.question = 0;
+  this.questionNow = 0;
+  this.neverHide=[false,false,false,false];
+  console.log("amount= "+this.rightanswer);
+  console.log("GotAmount="+this.service.getAmount());
+  this.loadComplete = false;
+  this.finished = false;
+  this.selectedoption = false;
+  this.bgcolor = '#0f3356';
+  this.service.getfun_bonus()
+      .subscribe(response => 
+      {
+      console.log(response);
+      this.callfun_bonus(response);
+      });
+    }
+ 
 
- } 
+    callfun_bonus(response){
+      console.log("called")
+      this.questions = response;
+      
+      console.log(this.questions[this.question].mq_question);
+      console.log(this.questions[this.question].mcq_answer_master);
+      this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
+      this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
+      this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
+      this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
+      this.printQuestion=this.questions[this.question].mq_question;
+      this.markCorrect()
+      // this.rightOption[3]="green";
+      this.loadComplete = true;
+    }
+    superbonusRoundQuestions(){
+      console.log("This is super bonus");
+      this.bonusPlay = true;
+     this.rightanswer = 0;
+     this.wronganswer = 0;
+     this.question = 0;
+     this.questionNow = 0;
+     this.neverHide=[false,false,false,false];
+     console.log("amount= "+this.rightanswer);
+     console.log("GotAmount="+this.service.getAmount());
+     this.loadComplete = false;
+     this.finished = false;
+     this.selectedoption = false;
+     this.bgcolor = '#0f3356';
+     this.service.getfun_superbonus()
+         .subscribe(response => 
+         {
+         console.log(response);
+         this.callfun_bonus(response);
+         });
+    }
+    getfun_superbonus(response){
+      console.log("called")
+      this.questions = response;
+      
+      console.log(this.questions[this.question].mq_question);
+      console.log(this.questions[this.question].mcq_answer_master);
+      this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
+      this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
+      this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
+      this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
+      this.printQuestion=this.questions[this.question].mq_question;
+      this.markCorrect()
+      // this.rightOption[3]="green";
+      this.loadComplete = true;
+    }
 }
+
+
+
+
 

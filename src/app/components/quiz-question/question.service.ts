@@ -29,7 +29,7 @@ export class QuestionService {
         rightAnswer = rightAnswer*this.each_amount;
         }
         rightAnswer.toFixed(2);
-        
+        this.amount.toFixed(2);
         this.amount = this.amount+rightAnswer;
      }
      getAmount(){
@@ -44,6 +44,27 @@ export class QuestionService {
     data.append("time", "");
   
     return this.http.post<Questions>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API/quiz/mcq_list',data).pipe(map(response => response.data))  
+  }
+  getfun_bonus()
+  {
+    var data = new FormData();
+    data.append("category_id", "1");
+    data.append("type", "bonus");
+    data.append("user_id", "6");
+    data.append("time", "");
+  
+    return this.http.post<Questions>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API/quiz/mcq_list',data).pipe(map(response => response.data))  
+  
+  }
+  getfun_superbonus(){
+    var data = new FormData();
+    data.append("category_id", "1");
+    data.append("type", "bonus");
+    data.append("user_id", "6");
+    data.append("time", "");
+  
+    return this.http.post<Questions>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API/quiz/mcq_list',data).pipe(map(response => response.data))  
+  
   }
 }
 
