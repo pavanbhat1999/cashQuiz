@@ -125,7 +125,7 @@ onTImerFinished(e)
     this.question++;
     if(this.wronganswer>1&&this.bonusRound)
     {
-      alert("you lost bonmus round");
+      alert("you lost bonus round");
       this.finished = true;
       
     }
@@ -192,8 +192,10 @@ onTImerFinished(e)
     // }
     else{
       this.finished = true;
-      
+      if(!this.bonusPlay)
       this.service.putAmount(this.rightanswer,this.round);
+      else if(this.bonusPlay)
+      this.service.amount +=10;
       this.amount = this.service.getAmount();
       if(this.rightanswer>=8)
       {
@@ -416,6 +418,7 @@ continueClicked()
     this.bonusRoundQuestions();
   }
   else if(this.bonusPlay&&this.superbonusround){
+    
       alert("This is super bonus Round");
       this.superbonusRoundQuestions();
   }
@@ -425,6 +428,7 @@ continueClicked()
     this.rightanswer = 0;
     this.wronganswer = 0;
     this.bonusRound = false;
+    this.bonusPlay=false;
     this.question = 0;
     this.questionNow = 0;
     this.neverHide=[false,false,false,false];
@@ -520,7 +524,7 @@ callfun1(response){
     getfun_superbonus(response){
       console.log("called")
       this.questions = response;
-      
+     
       console.log(this.questions[this.question].mq_question);
       console.log(this.questions[this.question].mcq_answer_master);
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
