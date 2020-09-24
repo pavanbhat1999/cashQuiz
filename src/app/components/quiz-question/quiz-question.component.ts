@@ -104,7 +104,7 @@ this.loadComplete = true;
 
 }
 
-// ------------------------------------------this is for deposites
+// ------------------------------------------this is for deposites frpm deposite page
 callfun_deposite(response,number){
   this.deposite = response;
   
