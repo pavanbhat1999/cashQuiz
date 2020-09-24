@@ -53,9 +53,9 @@ minus(h){
   this.count_y--;
 }
 add(h){
-  if(h==1)
+  if(h==1&&this.count_r<3)
   this.count_r++;
-  if(h==2)
+  if(h==2&&this.count_y<3)
   this.count_y++;
 }
 continue(){
