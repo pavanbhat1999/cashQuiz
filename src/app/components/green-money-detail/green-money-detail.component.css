@@ -1,0 +1,106 @@
+*{
+    margin: 0%;
+    border: 0%;
+  }
+  body,
+  html {
+    height: 100%;
+    background: #0f3356;
+  }
+  p{
+      color: grey;
+  }
+  hr{
+      border-top: 2px solid #f8f9fa;
+      margin: 1rem 15%;
+  }
+  h1{
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 10%;
+  }
+  
+  /* Background Image Settings */
+  .bg {
+    /* The image used */
+    background-image: url("app_main_bg.png");
+    
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  /* container for all elements */
+  .container {
+    text-align: center;
+  }
+  /* Image stylings */
+
+  .login-options img{
+      width: 15%;
+      margin: 5% 10%;
+      max-width: 100px;
+      cursor: pointer;
+  }
+  /* form setttings */
+  .form-control-sm ,.form-control-md {
+    border: solid black 0px;
+    border-radius: 2rem;
+    padding: 3% 15% 3% 15%;
+    margin: 3% 3%;
+    
+  }
+  .phone{
+    border: solid black 0px;
+    border-radius: 2rem;
+  }
+  .form-group{
+      display: flex;
+      justify-content: center;
+  } 
+  .input-container{
+    position: relative;
+      display: flex;
+      align-items: center;
+      justify-content:center ;
+  }
+  .input-container input{
+    text-indent: 32px;
+  }
+  .input-container .fa-user,.fa-envelope,.fa-key,.fa-phone,.fa-unlock-alt,.fa-map-marker,.fa-building,.fa-id-card,.fa-location-arrow,.fa-globe,.fa-address-book,.fa-wallet{ 
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: grey;
+  }
+ legend{
+      font-size: 1rem;
+      color: grey;
+  }
+  .login {
+    margin-top: 5%;
+    padding: 3% 10% 3% 10%;
+    border: solid black 0px;
+    border-radius: 2rem;
+  }
+  /* Other login options */
+  .login-options{
+      display: flex;
+      justify-content: center;
+  }
+  .Register::-webkit-input-placeholder {
+    color: white;
+  }
+  
+  .Register:-moz-placeholder {
+    color: white;
+  }
+  /* .iti-mobile .iti__country-list {
+    max-height: 60%;
+    width: 60%;
+} */

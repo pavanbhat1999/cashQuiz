@@ -11,5 +11,7 @@ export class GreenMoneyDetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
+payment(){
 
+}
 }

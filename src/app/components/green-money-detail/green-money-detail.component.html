@@ -1,1 +1,131 @@
-<p>green-money-detail works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+</head>
+
+<body>
+    <div class="bg">
+        <div class="container">
+            <h1>Green Money Details</h1>
+
+            <div class="container">
+                <form>
+                    <div class="form-group row">
+                        
+                        <label for="username" class="col-sm-1-12 col-form-label"></label>
+                        
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fa fa-user icon fa"></i>
+                            <input #username type="text" class="form-control-md form-control-sm mainLoginInput" name="username" id="username"
+                                placeholder="User Name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="Enter Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i  class="fa fa-phone icon"></i>
+                            
+                            <ngx-intl-tel-input #phone class="phone">       </ngx-intl-tel-input>
+                                
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fa fa-map-marker"></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fa icon fa-building"></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="City">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                        <i class="fa fa-location-arrow" ></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="State">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fa fa-address-book" ></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="Zip">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fa fa-globe" ></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="Country">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fa fa-id-card"></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="card">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        
+                        <label for="email" class="col-sm-1-12 col-form-label"></label>
+                        <div class="col-sm-1-12 input-container">
+                            <i class="fas fa-wallet    "></i>
+                            <input #email type="email" class="form-control-md form-control-sm" name="email" id="email"
+                                placeholder="Wallet">
+                        </div>
+                    </div>
+                    
+
+                    
+                    <div class="form-group row">
+                        <div routerLink="/questions" (click)="payment()" class="col-sm-1-12 input-container">
+                            <input  style="text-align: center; text-indent: 0px;background:#007bff;color: white;" readonly  type="text" class="Register form-control-md form-control-sm" name="password" id="password"
+                                placeholder="PAY NOW" /> 
+                        </div>
+                    </div>
+                    
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
