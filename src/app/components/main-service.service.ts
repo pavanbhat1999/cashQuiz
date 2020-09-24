@@ -15,7 +15,7 @@ export class MainServiceService {
   constructor(private http: HttpClient) { }
 
   putDeposite(id){
-    console.log("id="+id);
+    console.log("deposite="+id);
     this.d_number = id;
   }
   getfun()

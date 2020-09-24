@@ -35,7 +35,7 @@
   <p>Enter Extra hearts you want to Buy</p>
   <p><b (click)="minus(1)" class="minus">-</b> <i style="color:red" class="fa fa-heart" aria-hidden="true"></i>    <b (click)="add(1)" class="add">+</b>  {{count_r}}</p>
   <p><b (click)="minus(2)" class="minus">-</b> <i style="color:yellow" class="fa fa-heart" aria-hidden="true"></i> <b (click)="add(2)" class="add">+</b>  {{count_y}}</p>
-  <p>Total Amount = {{totalAmount}}</p>
+  <p>Total Amount = {{totalAmount.toFixed(2)}}</p>
 </div>
 <div (click)="continue()"  class="footer">
     <button   class="btn btn-primary">Contiue</button>

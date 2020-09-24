@@ -51,7 +51,7 @@ this.totalAmount = parseFloat(this.amount[id]);
 
 this.heart_price = parseFloat(this.deposite[id].d_add_heart_amount);
 
-this.mainservice.putDeposite(id);
+// this.mainservice.putDeposite(this.totalAmount);
 
 }
 
@@ -87,6 +87,7 @@ continue(){
     this.router.navigate(['paymentPage']);
     this.mainservice.redheart=this.count_r;
     this.mainservice.yellowheart=this.count_y;
+    this.mainservice.putDeposite(this.totalAmount);
   }
   else
   this.continuePressed = false;
