@@ -71,6 +71,7 @@ export class QuizQuestionComponent implements OnInit {
     });
    console.log("id from main="+this.mainservice.d_number);
    console.log("red=",this.mainservice.redheart);
+   console.log("amount deposited ="+this.mainservice.totalAmount)
   //  getting all data from main service
    this.redHeartCount=this.mainservice.redheart;
    this.yellowHeartCount=this.mainservice.yellowheart;

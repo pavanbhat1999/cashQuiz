@@ -33,9 +33,15 @@
     <i style="color: yellow" class="fas fa-heart"></i> :{{yellowHeartCount}}
   </p>
   <div class="trophy">
-    <img
+    <img *ngIf="!bonusRound"
       style="width: 50%; margin: 10%"
       src="assets/winnercup.png"
+      alt="cup"
+      class=""
+    />
+    <img *ngIf="bonusRound||superbonusround"
+      style="width: 50%; margin: 10%"
+      src="assets/coin.png"
       alt="cup"
       class=""
     />
