@@ -12,9 +12,11 @@ import {Router} from '@angular/router'
 export class DepositePageComponent implements OnInit {
 count_r : number = 1;
 count_y : number = 2;
+heart_price ;
 deposite ;
 amount = [];
-totalAmount;
+totalAmount : number = 0;
+
 detail = [];
 detailDisplay;
 continuePressed = true;
@@ -42,24 +44,43 @@ callfun(response)
   }
 
 detailfetch(id){
+  this.count_r =1;
+this.count_y =2;
 this.detailDisplay = this.detail[id];
+this.totalAmount = parseFloat(this.amount[id]);
+
+this.heart_price = parseFloat(this.deposite[id].d_add_heart_amount);
+
 this.mainservice.putDeposite(id);
 
 }
 
 minus(h){
   if(h==1&&this.count_r>1)
+  {
   this.count_r--;
-  
+  this.totalAmount -=this.heart_price;
+  } 
   if(h==2&&this.count_y>2)
+  {
   this.count_y--;
+  this.totalAmount -=this.heart_price;
+  }
 }
 add(h){
   if(h==1&&this.count_r<3)
+  {
   this.count_r++;
+  this.totalAmount +=this.heart_price;
+  }
   if(h==2&&this.count_y<3)
-  this.count_y++;
+  {
+    this.count_y++;;
+    this.totalAmount +=this.heart_price;
+  }
+  
 }
+
 continue(){
   if(this.continuePressed==false)
   {
