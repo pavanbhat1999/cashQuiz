@@ -14,6 +14,7 @@ count_r : number = 1;
 count_y : number = 2;
 deposite ;
 amount = [];
+totalAmount;
 detail = [];
 detailDisplay;
 continuePressed = true;
