@@ -88,7 +88,7 @@ continue(){
     this.mainservice.redheart=this.count_r;
     this.mainservice.yellowheart=this.count_y;
     // this.mainservice.putDeposite(this.totalAmount);
-    this.mainservice.totalAmount = this.totalAmount;
+    this.mainservice.totalAmount = this.totalAmount.toFixed(2);
   }
   else
   this.continuePressed = false;
