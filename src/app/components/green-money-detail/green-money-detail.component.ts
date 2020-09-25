@@ -17,16 +17,20 @@ export class GreenMoneyDetailComponent implements OnInit {
   check_no = 12345;
   check_id = 1;
 
-  constructor(private service : MainServiceService) { }
+  constructor(private mainservice : MainServiceService) { }
 
   ngOnInit(): void {
-    this.deposite_id = this.service.d_number+1;  // id0 is incresed by 1 to give correct answer
-    console.log("d_id="+this.deposite_id);
-    console.log("amount="+this.service.deposite[this.service.d_number].d_amount);
-    console.log("type="+this.service.d_type);
+    this.deposite_id = this.mainservice.d_number+1;  // id0 is incresed by 1 to give correct answer
+   this.user_id=this.mainservice.u_id;
+   this.deposite_id=this.deposite_id;
+    
+   this.amount=this.mainservice.totalAmount;
+   this.type=this.mainservice.d_type;
     // d-num+1=id
+    
   }
 payment(){
-
+ this.mainservice.payment_submit(this.user_id,this.deposite_id,this.amount,this.type,status,this.description,this.result,this.check_no,this.check_id)
+ .subscribe(response=>console.log(response));
 }
 }

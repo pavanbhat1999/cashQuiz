@@ -86,11 +86,12 @@ add(h){
 continue(){
   if(this.continuePressed==false)
   {
-    this.router.navigate(['paymentPage']);
     this.mainservice.redheart=this.count_r;
     this.mainservice.yellowheart=this.count_y;
     // this.mainservice.putDeposite(this.totalAmount);
     this.mainservice.totalAmount = this.totalAmount.toFixed(2);
+    this.router.navigate(['paymentPage']);
+    
   }
   else
   this.continuePressed = false;
