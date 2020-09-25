@@ -7,7 +7,7 @@ import {MainServiceService} from '../main-service.service'
 })
 export class PaymentPageComponent implements OnInit {
 
-  constructor(private service : MainServiceService) { }
+  constructor(private mainservice : MainServiceService) { }
 
   ngOnInit(): void {
   }
@@ -16,8 +16,8 @@ export class PaymentPageComponent implements OnInit {
   }
 type(type){
   if(type==1)
-  this.service.d_type="alipay"
+  this.mainservice.d_type="alipay"
   if(type==2)
- this.service.d_type="green-money"
+ this.mainservice.d_type="green-money"
 }
 }
