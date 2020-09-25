@@ -54,11 +54,12 @@ mySubscription: any;
       this.email=this.userDetail.u_email;
     }
     );
+    
     $(document).ready(function () {
-      (<any>$("#sidebar")).mCustomScrollbar({
-          theme: "minimal"
-      });
-
+    //  (<any> $("#sidebar")).mCustomScrollbar({
+    //       theme: "minimal"   It was not working with angular
+    //   });
+    
       $('#dismiss, .overlay').on('click', function () {
           $('#sidebar').removeClass('active');
           $('.overlay').removeClass('active');
@@ -71,6 +72,7 @@ mySubscription: any;
           $('a[aria-expanded=true]').attr('aria-expanded', 'false');
       });
   });
+
     // localStorage.setItem('dataSource', this.mainservice.u_email);
     // console.log(localStorage.getItem('dataSource'));
 //     const firstTime = localStorage.getItem('key');

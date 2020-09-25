@@ -27,6 +27,7 @@
     "google-libphonenumber": "^3.2.13",
     "intl-tel-input": "^17.0.3",
     "jquery": "^3.5.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
     "ng2-tel-input": "^2.3.0",
     "ngx-bootstrap": "^6.1.0",
     "ngx-countdown": "^10.0.1",
