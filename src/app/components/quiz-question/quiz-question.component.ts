@@ -89,7 +89,7 @@ console.log("called")
 this.questions = response;
 
 console.log(this.questions[this.question].mq_question);
-console.log(this.questions[this.question].mcq_answer_master);
+//console.log(this.questions[this.question].mcq_answer_master);
 this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
 this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
 this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
@@ -138,6 +138,7 @@ onTImerFinished(e)
     {
       alert("you lost super bonus round");
       this.superbonusPlay=false;
+      this.superbonusround = false;
       this.finished = true;
       this.goBack=true;
       
@@ -153,7 +154,7 @@ onTImerFinished(e)
       this.bgcolor = '#0f3356';
       
       
-      console.log(this.questions[this.question].mcq_answer_master);
+      //console.log(this.questions[this.question].mcq_answer_master);
       this.printQuestion=this.questions[this.question].mq_question;
       this.questionNow++;
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -175,7 +176,7 @@ onTImerFinished(e)
     //   this.bgcolor = '#0f3356';
     //   this.question++;
       
-    //   console.log(this.questions[this.question].mcq_answer_master);
+    //   //console.log(this.questions[this.question].mcq_answer_master);
     //   this.printQuestion=this.questions[this.question].mq_question;
     //   this.questionNow++;
     //   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -193,7 +194,7 @@ onTImerFinished(e)
     //   this.bgcolor = '#0f3356';
     //   this.question++;
       
-    //   console.log(this.questions[this.question].mcq_answer_master);
+    //   //console.log(this.questions[this.question].mcq_answer_master);
     //   this.printQuestion=this.questions[this.question].mq_question;
     //   this.questionNow++;
     //   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -211,11 +212,11 @@ onTImerFinished(e)
       this.finished = true;
       if(!this.bonusPlay)
       this.service.putAmount(this.rightanswer,this.round);
-      else if(this.bonusPlay&&this.wronganswer<=1)
+      else if(this.bonusPlay&&this.wronganswer<=1&&!this.superbonusPlay)
       this.service.amount +=10;/////add bonus round win amount
       else if(this.bonusPlay&&this.wronganswer<1&&this.superbonusPlay)
       {
-        this.service.amount +=20;
+        this.service.amount +=20;  // add super bonus amount
       }
       this.amount = this.service.getAmount();
       if(this.rightanswer>=8)
@@ -305,7 +306,7 @@ for (let j of numbers) {
 
 //---------------------------------- Option Selected properties-----------------------------------------------
 selectoption1(){
-  console.log(this.questions[this.question].mcq_answer_master);
+  //console.log(this.questions[this.question].mcq_answer_master);
   console.log(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer);
   if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
   {
@@ -453,6 +454,8 @@ continueClicked()
     this.wronganswer = 0;
     this.bonusRound = false;
     this.bonusPlay=false;
+    this.superbonusround = false;
+    this.superbonusPlay = false;
     this.question = 0;
     this.questionNow = 0;
     this.neverHide=[false,false,false,false];
@@ -475,7 +478,7 @@ callfun1(response){
   this.questions = response;
   
   console.log(this.questions[this.question].mq_question);
-  console.log(this.questions[this.question].mcq_answer_master);
+  //console.log(this.questions[this.question].mcq_answer_master);
   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
   this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
   this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
@@ -514,7 +517,7 @@ callfun1(response){
       this.questions = response;
       
       console.log(this.questions[this.question].mq_question);
-      console.log(this.questions[this.question].mcq_answer_master);
+      //console.log(this.questions[this.question].mcq_answer_master);
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
@@ -551,7 +554,7 @@ callfun1(response){
       this.questions = response;
      
       console.log(this.questions[this.question].mq_question);
-      console.log(this.questions[this.question].mcq_answer_master);
+      //console.log(this.questions[this.question].mcq_answer_master);
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
