@@ -33,6 +33,7 @@ continuePressed = true;
 callfun(response)
  {
     this.deposite = response;
+    this.mainservice.getDeposite(this.deposite);
     let j= [0,1,2,3,4,5,6,7]
     for(let i of j)
     {
@@ -51,6 +52,7 @@ this.totalAmount = parseFloat(this.amount[id]);
 
 this.heart_price = parseFloat(this.deposite[id].d_add_heart_amount);
 this.mainservice.putDeposite(id);
+
 // this.mainservice.putDeposite(this.totalAmount);
 
 }

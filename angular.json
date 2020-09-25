@@ -31,7 +31,7 @@
               "node_modules/intl-tel-input/build/css/intlTelInput.css",
               "node_modules/intl-tel-input/build/js/intlTelInput.min.js"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           },
           "configurations": {
             "production": {

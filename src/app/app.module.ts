@@ -21,6 +21,7 @@ import { DepositePageComponent } from './components/deposite-page/deposite-page.
 import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 import { GreenMoneyDetailComponent } from './components/green-money-detail/green-money-detail.component';
 import { WinPageComponent } from './components/win-page/win-page.component';
+import { LanguageSelectComponent } from './components/language-select/language-select.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { WinPageComponent } from './components/win-page/win-page.component';
     DepositePageComponent,
     PaymentPageComponent,
     GreenMoneyDetailComponent,
-    WinPageComponent
+    WinPageComponent,
+    LanguageSelectComponent
   ],
   imports: [
     BrowserModule,
