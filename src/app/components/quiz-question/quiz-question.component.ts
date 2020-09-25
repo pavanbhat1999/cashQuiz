@@ -19,7 +19,9 @@ export class QuizQuestionComponent implements OnInit {
   deposite ;
   bonusRound = false;
   bonusPlay = false;
+  superbonusPlay = false;
   superbonusround = false;
+  goBack = false;
   time:number=10;
   redHeartCount : number = 1;
   redHeartUsed =false;
@@ -124,10 +126,20 @@ onTImerFinished(e)
   {
     this.rightOption=[];
     this.question++;
-    if(this.wronganswer>1&&this.bonusRound)
+    if(this.wronganswer>1&&this.bonusRound&&!this.superbonusPlay)
     {
       alert("you lost bonus round");
+      this.bonusRound =false;
       this.finished = true;
+      this.goBack=true;
+      
+    }
+    if(this.wronganswer>0&&this.bonusRound&&this.superbonusPlay)
+    {
+      alert("you lost super bonus round");
+      this.superbonusPlay=false;
+      this.finished = true;
+      this.goBack=true;
       
     }
     if(this.question==5)
@@ -199,8 +211,12 @@ onTImerFinished(e)
       this.finished = true;
       if(!this.bonusPlay)
       this.service.putAmount(this.rightanswer,this.round);
-      else if(this.bonusPlay)
+      else if(this.bonusPlay&&this.wronganswer<=1)
       this.service.amount +=10;/////add bonus round win amount
+      else if(this.bonusPlay&&this.wronganswer<1&&this.superbonusPlay)
+      {
+        this.service.amount +=20;
+      }
       this.amount = this.service.getAmount();
       if(this.rightanswer>=8)
       {
@@ -421,6 +437,7 @@ continueClicked()
   {
     alert("You have entered Bonus round");
     this.bonusRoundQuestions();
+    
   }
   else if(this.bonusPlay&&this.superbonusround){
     
@@ -431,6 +448,7 @@ continueClicked()
   {
   
     this.round++;
+    this.goBack=false;
     this.rightanswer = 0;
     this.wronganswer = 0;
     this.bonusRound = false;
@@ -470,7 +488,7 @@ callfun1(response){
   }
  bonusRoundQuestions(){
    console.log("This is bonus");
-   this.bonusPlay = true;
+  this.bonusPlay = true;
   this.rightanswer = 0;
   this.wronganswer = 0;
   this.question = 0;
@@ -508,7 +526,8 @@ callfun1(response){
     }
     superbonusRoundQuestions(){
       console.log("This is super bonus");
-      this.bonusPlay = true;
+     this.bonusPlay = true;
+     this.superbonusPlay = true;
      this.rightanswer = 0;
      this.wronganswer = 0;
      this.question = 0;

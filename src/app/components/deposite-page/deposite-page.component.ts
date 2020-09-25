@@ -68,12 +68,12 @@ minus(h){
   }
 }
 add(h){
-  if(h==1&&this.count_r<3)
+  if(h==1&&this.count_r<2)
   {
   this.count_r++;
   this.totalAmount +=this.heart_price;
   }
-  if(h==2&&this.count_y<3)
+  if(h==2&&this.count_y<4)
   {
     this.count_y++;;
     this.totalAmount +=this.heart_price;

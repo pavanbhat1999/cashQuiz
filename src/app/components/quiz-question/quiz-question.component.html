@@ -46,9 +46,15 @@
       class=""
     />
   </div>
-  <p><b style="color: green">YOU WON</b></p>
-  <p *ngIf="bonusRound&&!superbonusround" > <b style="color: green">You have entered the bonus Round </b></p>
-  <p *ngIf="superbonusround" > <b style="color: green">You have entered the super bonus Round </b></p>
+  <div *ngIf="goBack">
+    <p><b style="color: red">YOU LOST BONUS</b></p>
+   
+  </div>
+  <div *ngIf="!goBack">
+    <p style="text-align: center;"><b style="color: green">YOU WON</b></p>
+    <p *ngIf="bonusRound&&!superbonusround" > <b style="color: green">You have entered the bonus Round </b></p>
+    <p *ngIf="superbonusround" > <b style="color: green">You have entered the super bonus Round </b></p>
+  </div>  
   <button
     style="padding: 2% 20%; border-radius: 2rem"
     (click)="continueClicked()"
