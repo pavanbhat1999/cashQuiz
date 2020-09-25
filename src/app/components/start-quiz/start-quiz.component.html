@@ -20,21 +20,17 @@
 
 
                     <li>
-                        <a (click)="menu(1)">
-                            <img src="assets/home.png" alt="">
-                            Home
-                        </a>
-                        <a href="#"><img src="assets/qui.png" alt=""> Quiz History</a>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><img
-                                src="assets/payment.png" alt=""> Payment History</a>
-                        <a (click)="menu(4)" ><img src="assets/info.png" alt="">About Us</a>
-                        <a href="#"><img src="assets/requestcontact.png" alt="">Contact Us</a>
-                        <a href="#"><img src="assets/walletdrawericon.png" alt="">Wallet</a>
-                        <a href="#"><img src="assets/privacy_policy.png" alt="">Privacy Policy</a>
-                        <a href="#"><img src="assets/term.png" alt="">Terms & Conditions</a>
-                        <a href="#"><img src="assets/profile.png" alt="">Profile</a>
-                        <a href="#"><img src="assets/share.png" alt="">Share</a>
-                        <a href="#"><img src="assets/support.png" alt="">Settings</a>
+                        <a (click)="menu(1)"><img src="assets/home.png" alt=""> Home</a>
+                        <a (click)="menu(2)"><img src="assets/qui.png" alt=""> Quiz History</a>
+                        <a (click)="menu(3)"><img src="assets/payment.png" alt=""> Payment History</a>
+                        <a (click)="menu(4)"><img src="assets/info.png" alt="">About Us</a>
+                        <a (click)="menu(5)"><img src="assets/requestcontact.png" alt="">Contact Us</a>
+                        <a (click)="menu(6)"><img src="assets/walletdrawericon.png" alt="">Wallet</a>
+                        <a (click)="menu(7)"><img src="assets/privacy_policy.png" alt="">Privacy Policy</a>
+                        <a (click)="menu(8)"><img src="assets/term.png" alt="">Terms & Conditions</a>
+                        <a (click)="menu(9)"><img src="assets/profile.png" alt="">Profile</a>
+                        <a (click)="menu(10)"><img src="assets/share.png" alt="">Share</a>
+                        <a (click)="menu(11)"><img src="assets/support.png" alt="">Settings</a>
                         <a routerLink="/login"><img src="assets/logout.png" alt="">LogOut</a>
                     </li>
 
@@ -53,15 +49,44 @@
                         <button type="button" id="sidebarCollapse" class="btn btn-primary">
                             <i class="fa fa-align-justify" aria-hidden="true"></i>
                         </button>
-                        CURRENT OPTION
+                        {{displayoption[option-1]}}
                     </div>
                 </nav>
+
+                <!-- Inner compnents rendered in single page no navigation -->
                 <div *ngIf="option==1">
                 <app-inner (startclicked)="startTheQuiz()"></app-inner>
+                </div>
+                <div *ngIf="option==2">
+                    <!-- ------//TODO copy paste same styling Copy path from about Us div-id should be content-inner-->
+                </div>
+                <div *ngIf="option==3">
+                    
                 </div>
                 <div *ngIf="option==4">
                 <app-about-us></app-about-us>
                 </div>   
+                <div *ngIf="option==5">
+                    
+                </div>
+                <div *ngIf="option==6">
+                    
+                </div>
+                <div *ngIf="option==7">
+                    
+                </div>
+                <div *ngIf="option==8">
+                    
+                </div>
+                <div *ngIf="option==9">
+                    
+                </div>
+                <div *ngIf="option==10">
+                    
+                </div>
+                <div *ngIf="option==11">
+                    
+                </div>
                 
             </div>
         </div>

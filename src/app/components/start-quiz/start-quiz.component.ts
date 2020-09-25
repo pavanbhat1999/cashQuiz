@@ -16,6 +16,7 @@ export class StartQuizComponent implements OnInit {
 @Output() start = new EventEmitter();
 reload : number = 0;
 option=1;
+displayoption=["HOME","PAYMENT","HISTORY","ABOUT"]
   constructor() { }
 
   ngOnInit(): void {
@@ -36,6 +37,7 @@ startTheQuiz(){
 }
 menu(choice){
   this.option=choice;
+  
 }
 
   }
