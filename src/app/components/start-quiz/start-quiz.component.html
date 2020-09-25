@@ -20,14 +20,14 @@
 
 
                     <li>
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <a (click)="menu(1)">
                             <img src="assets/home.png" alt="">
                             Home
                         </a>
                         <a href="#"><img src="assets/qui.png" alt=""> Quiz History</a>
                         <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><img
                                 src="assets/payment.png" alt=""> Payment History</a>
-                        <a href="#"><img src="assets/info.png" alt="">About Us</a>
+                        <a (click)="menu(4)" ><img src="assets/info.png" alt="">About Us</a>
                         <a href="#"><img src="assets/requestcontact.png" alt="">Contact Us</a>
                         <a href="#"><img src="assets/walletdrawericon.png" alt="">Wallet</a>
                         <a href="#"><img src="assets/privacy_policy.png" alt="">Privacy Policy</a>
@@ -56,7 +56,12 @@
                         CURRENT OPTION
                     </div>
                 </nav>
+                <div *ngIf="option==1">
                 <app-inner (startclicked)="startTheQuiz()"></app-inner>
+                </div>
+                <div *ngIf="option==4">
+                <app-about-us></app-about-us>
+                </div>   
                 
             </div>
         </div>
