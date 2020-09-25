@@ -99,7 +99,7 @@ formdata.append("description", description);
 formdata.append("result", result);
 formdata.append("check_no", check_no);
 formdata.append("check_id",check_id);
-  return this.http.post('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/payment/payment_submit',formdata).pipe(map(response => response))
+  return this.http.post<{"result"}>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/payment/payment_submit',formdata).pipe(map(response => response))
   }
 }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectControlValueAccessor } from '@angular/forms';
+import { Router } from '@angular/router';
 import {MainServiceService} from '../main-service.service'
 @Component({
   selector: 'app-green-money-detail',
@@ -16,8 +17,8 @@ export class GreenMoneyDetailComponent implements OnInit {
   result = 1;
   check_no = 12345;
   check_id = 1;
-
-  constructor(private mainservice : MainServiceService) { }
+  goNext = false;
+  constructor(private mainservice : MainServiceService,private router:Router) { }
 
   ngOnInit(): void {
     this.deposite_id = this.mainservice.d_number+1;  // id0 is incresed by 1 to give correct answer
@@ -31,6 +32,11 @@ export class GreenMoneyDetailComponent implements OnInit {
   }
 payment(){
  this.mainservice.payment_submit(this.user_id,this.deposite_id,this.amount,this.type,status,this.description,this.result,this.check_no,this.check_id)
- .subscribe(response=>console.log(response));
+ .subscribe(response=>
+  {
+    console.log(response.result);
+    if(response.result)
+    this.router.navigate(["/languageSelect"]);
+  });
 }
 }
