@@ -20,9 +20,9 @@ export class GreenMoneyDetailComponent implements OnInit {
   constructor(private service : MainServiceService) { }
 
   ngOnInit(): void {
-    this.deposite_id = this.service.d_number+1;
+    this.deposite_id = this.service.d_number+1;  // id0 is incresed by 1 to give correct answer
     console.log("d_id="+this.deposite_id);
-    console.log("log="+this.service.deposite[this.service.d_number].d_amount);
+    console.log("amount="+this.service.deposite[this.service.d_number].d_amount);
     console.log("type="+this.service.d_type);
     // d-num+1=id
   }

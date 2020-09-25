@@ -37,6 +37,23 @@ mySubscription: any;
     // setTimeout(function(){
     //   location.reload()
     // },1000);
+    
+
+  // -------Used for getting user deatils
+  this.mainservice.getUserDetails().subscribe(response=>
+    {
+    
+    console.log(response);
+    this.userDetail = response;
+    this.mainservice.user_details=response;   // storing user all details in main server for future references
+      this.mainservice.u_id=this.userDetail.u_id;
+      this.mainservice.u_username=this.userDetail.u_username;
+      this.mainservice.u_email=this.userDetail.u_email;
+      console.log(this.mainservice.user_details);
+      this.username=this.userDetail.u_username;
+      this.email=this.userDetail.u_email;
+    }
+    );
     $(document).ready(function () {
       (<any>$("#sidebar")).mCustomScrollbar({
           theme: "minimal"
@@ -54,22 +71,6 @@ mySubscription: any;
           $('a[aria-expanded=true]').attr('aria-expanded', 'false');
       });
   });
-
-  // -------Used for getting user deatils
-  this.mainservice.getUserDetails().subscribe(response=>
-    {
-    
-    console.log(response);
-    this.userDetail = response;
-    this.mainservice.user_details=response;   // storing user all details in main server for future references
-      this.mainservice.u_id=this.userDetail.u_id;
-      this.mainservice.u_username=this.userDetail.u_username;
-      this.mainservice.u_email=this.userDetail.u_email;
-      console.log(this.mainservice.user_details);
-      this.username=this.userDetail.u_username;
-      this.email=this.userDetail.u_email;
-    }
-    );
     // localStorage.setItem('dataSource', this.mainservice.u_email);
     // console.log(localStorage.getItem('dataSource'));
 //     const firstTime = localStorage.getItem('key');
