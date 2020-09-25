@@ -4,7 +4,8 @@ import { from } from 'rxjs';
 import { CountdownComponent } from 'ngx-countdown';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import {MainServiceService} from '../main-service.service';
-
+import { Router } from '@angular/router';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-quiz-question',
@@ -59,7 +60,7 @@ export class QuizQuestionComponent implements OnInit {
   j:number=0;
   event = {action: "done", left: 0, status: 3, text: "0"};
   @ViewChild('countdown') counter: CountdownComponent;
-  constructor(private service : QuestionService,private mainservice : MainServiceService) { }
+  constructor(private service : QuestionService,private mainservice : MainServiceService,private router:Router) { }
 
   ngOnInit(): void {
     
@@ -191,11 +192,15 @@ onTImerFinished(e)
     //   this.restart();
     // }
     else{
+      if(this.round>=3)
+      {
+        this.router.navigate(["/winPage"]);
+      }
       this.finished = true;
       if(!this.bonusPlay)
       this.service.putAmount(this.rightanswer,this.round);
       else if(this.bonusPlay)
-      this.service.amount +=10;
+      this.service.amount +=10;/////add bonus round win amount
       this.amount = this.service.getAmount();
       if(this.rightanswer>=8)
       {
@@ -424,6 +429,7 @@ continueClicked()
   }
   else
   {
+  
     this.round++;
     this.rightanswer = 0;
     this.wronganswer = 0;

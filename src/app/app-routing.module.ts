@@ -7,6 +7,7 @@ import {RegisterComponent} from './components/register/register.component';
 import {DepositePageComponent} from './components/deposite-page/deposite-page.component';
 import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 import {GreenMoneyDetailComponent} from './components/green-money-detail/green-money-detail.component';
+import {WinPageComponent} from './components/win-page/win-page.component';
 const routes: Routes = [{path:'startPage',component:StartQuizComponent },
                         {path:'questions',component:QuizQuestionComponent },
                         {path:'login',component:LogInComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [{path:'startPage',component:StartQuizComponent },
                         {path:'depositePage',component:DepositePageComponent },
                         {path:'paymentPage',component:PaymentPageComponent },
                         {path:'greenMoneyDetail',component:GreenMoneyDetailComponent },
+                        {path:'winPage',component:WinPageComponent },
                       ];
 
 @NgModule({

@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 import { DepositePageComponent } from './components/deposite-page/deposite-page.component';
 import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 import { GreenMoneyDetailComponent } from './components/green-money-detail/green-money-detail.component';
+import { WinPageComponent } from './components/win-page/win-page.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { GreenMoneyDetailComponent } from './components/green-money-detail/green
     EmptyPageComponent,
     DepositePageComponent,
     PaymentPageComponent,
-    GreenMoneyDetailComponent
+    GreenMoneyDetailComponent,
+    WinPageComponent
   ],
   imports: [
     BrowserModule,
