@@ -157,14 +157,14 @@ export class QuizQuestionComponent implements OnInit {
     "mq_time": "10",
     "user_select_right_ans": false
 }
-  this.test_submit.mcq.push(
-    new_value
-  );
+  // this.test_submit.mcq.push(
+  //   new_value
+  // );
   
-    this.test_submit.mcq.push(
-      new_value1
-    );
-    console.log("string "+this.test_submit.mcq[0].user_select_right_ans);
+  //   this.test_submit.mcq.push(
+  //     new_value1
+  //   );
+   // console.log("string "+this.test_submit.mcq[0].user_select_right_ans);
     var raw = JSON.stringify(this.test_submit);
     console.log("rw "+raw);
     this.service.getfun()
@@ -190,8 +190,25 @@ console.log("called")
 this.questions = response;
 var new_val3 = this.questions[this.question];
 new_val3.user_select_right_ans="true";   //TODO call this in selected option
+// Add all attributes do not miss any attribute for any option
+new_val3.mcq_answer_master[0].is_user_selected="true";
+new_val3.mcq_answer_master[0].is_red_heart_selected=null;
+new_val3.mcq_answer_master[0].is_system_selected=null;
+
+new_val3.mcq_answer_master[1].is_user_selected=null;
+new_val3.mcq_answer_master[1].is_red_heart_selected=null;
+new_val3.mcq_answer_master[1].is_system_selected=null;
+
+new_val3.mcq_answer_master[2].is_user_selected=null;
+new_val3.mcq_answer_master[2].is_red_heart_selected=null;
+new_val3.mcq_answer_master[2].is_system_selected=null;
+
+new_val3.mcq_answer_master[3].is_user_selected=null;
+new_val3.mcq_answer_master[3].is_red_heart_selected=null;
+new_val3.mcq_answer_master[3].is_system_selected=null;
+
 this.test_submit.mcq.push(new_val3);
-console.log("new=",this.test_submit.mcq[2].mq_id);
+console.log("new=",this.test_submit.mcq[0].mq_id);
 var raw = JSON.stringify(this.test_submit);
     console.log("rw1 "+raw);
 console.log(this.questions[this.question].mq_question);
