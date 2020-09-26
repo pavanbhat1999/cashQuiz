@@ -454,6 +454,55 @@ initOpacity(){
 }
 
 selectoption2(){
+
+
+
+
+
+
+
+
+  this.answer_submit[this.question] = this.questions[this.question];
+   
+                                                      
+  this.answer_submit[this.question].mcq_answer_master[0].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[0].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[0].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[1].is_user_selected="true";
+  this.answer_submit[this.question].mcq_answer_master[1].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[1].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[2].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[2].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[2].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[3].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[3].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
+  
+  this.answer_submit[this.question].user_select_right_ans="true";
+  this.test_submit.mcq.push(this.answer_submit[this.question]);
+  console.log("new=",this.test_submit.mcq[this.question].mq_id);
+  var raw = JSON.stringify(this.test_submit);
+      console.log("rw1 "+raw);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="right")
   {
     this.bgcolor = 'green';
@@ -476,6 +525,55 @@ selectoption2(){
  
 }
 selectoption3(){
+
+
+
+
+
+
+
+
+
+  this.answer_submit[this.question] = this.questions[this.question];
+   
+                                                      
+  this.answer_submit[this.question].mcq_answer_master[0].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[0].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[0].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[1].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[1].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[1].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[2].is_user_selected="true";
+  this.answer_submit[this.question].mcq_answer_master[2].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[2].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[3].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[3].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
+  
+  this.answer_submit[this.question].user_select_right_ans="true";
+  this.test_submit.mcq.push(this.answer_submit[this.question]);
+  console.log("new=",this.test_submit.mcq[this.question].mq_id);
+  var raw = JSON.stringify(this.test_submit);
+      console.log("rw1 "+raw);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="right")
   {
     this.bgcolor = 'green';
@@ -496,6 +594,46 @@ selectoption3(){
  
 }
 selectoption4(){
+
+
+
+
+
+
+  this.answer_submit[this.question] = this.questions[this.question];
+   
+                                                      
+  this.answer_submit[this.question].mcq_answer_master[0].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[0].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[0].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[1].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[1].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[1].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[2].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[2].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[2].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[3].is_user_selected="true";
+  this.answer_submit[this.question].mcq_answer_master[3].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
+  
+  this.answer_submit[this.question].user_select_right_ans="true";
+  this.test_submit.mcq.push(this.answer_submit[this.question]);
+  console.log("new=",this.test_submit.mcq[this.question].mq_id);
+  var raw = JSON.stringify(this.test_submit);
+      console.log("rw1 "+raw);
+
+
+
+
+
+
+
+
+
+
   if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="right")
   {
     this.bgcolor = 'green';
