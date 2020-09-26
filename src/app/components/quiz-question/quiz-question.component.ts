@@ -6,7 +6,7 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 import {MainServiceService} from '../main-service.service';
 import { Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
-
+import {Answers} from './answers';
 @Component({
   selector: 'app-quiz-question',
   templateUrl: './quiz-question.component.html',
@@ -59,6 +59,16 @@ export class QuizQuestionComponent implements OnInit {
   opacity3 : string = "";
   opacity4 : string = "";
   val = "";
+  test_submit=
+  {
+    "category_id": "1",  // take it from main
+    "user_id": "2",      //take it from main 
+    "payment_history_id": "1",  // take it form deposite
+    "round_type": "starter",   // take it from current questions page
+     "mcq": [                // apppend for each answer
+         
+        ]
+      }
   j:number=0;
   event = {action: "done", left: 0, status: 3, text: "0"};
   @ViewChild('countdown') counter: CountdownComponent;
@@ -66,6 +76,97 @@ export class QuizQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     
+  //  *****Important test_submit insertion***
+    var new_value={
+      "mcq_answer_master": [
+          {
+              "answer": "lion",
+              "is_red_heart_selected": null,
+              "is_system_selected": null,
+              "is_user_selected": null,
+              "mc_id": 2252,
+              "mc_is_true_answer": "wrong"
+          },
+          {
+              "answer": "cheetah",
+              "is_red_heart_selected": false,
+              "is_system_selected": false,
+              "is_user_selected": true,
+              "mc_id": 2253,
+              "mc_is_true_answer": "right"
+          },
+          {
+              "answer": "man",
+              "is_red_heart_selected": null,
+              "is_system_selected": null,
+              "is_user_selected": null,
+              "mc_id": 2254,
+              "mc_is_true_answer": "wrong"
+          },
+          {
+              "answer": "jaguar",
+              "is_red_heart_selected": null,
+              "is_system_selected": null,
+              "is_user_selected": null,
+              "mc_id": 2255,
+              "mc_is_true_answer": "wrong"
+          }
+      ],
+      "mq_id": "1",
+      "mq_question": "The fastest-running terrestrial animal is",
+      "mq_time": "10",
+      "user_select_right_ans": true
+  }
+  var new_value1={
+    "mcq_answer_master": [
+        {
+            "answer": "lion",
+            "is_red_heart_selected": null,
+            "is_system_selected": null,
+            "is_user_selected": null,
+            "mc_id": 2252,
+            "mc_is_true_answer": "wrong"
+        },
+        {
+            "answer": "cheetah",
+            "is_red_heart_selected": false,
+            "is_system_selected": false,
+            "is_user_selected": true,
+            "mc_id": 2253,
+            "mc_is_true_answer": "right"
+        },
+        {
+            "answer": "man",
+            "is_red_heart_selected": null,
+            "is_system_selected": null,
+            "is_user_selected": null,
+            "mc_id": 2254,
+            "mc_is_true_answer": "wrong"
+        },
+        {
+            "answer": "jaguar",
+            "is_red_heart_selected": null,
+            "is_system_selected": null,
+            "is_user_selected": null,
+            "mc_id": 2255,
+            "mc_is_true_answer": "wrong"
+        }
+    ],
+    "mq_id": "1",
+    "mq_question": "The fastest-running terrestrial animal is",
+    "mq_time": "10",
+    "user_select_right_ans": false
+}
+  this.test_submit.mcq.push(
+    new_value
+  );
+  
+    this.test_submit.mcq.push(
+      new_value1
+    );
+    console.log("string "+this.test_submit.mcq[0].user_select_right_ans);
+    var raw = JSON.stringify(this.test_submit);
+    console.log("rw "+raw);
     this.service.getfun()
     .subscribe(response => 
     {
@@ -87,7 +188,12 @@ export class QuizQuestionComponent implements OnInit {
 callfun(response){
 console.log("called")
 this.questions = response;
-
+var new_val3 = this.questions[this.question];
+new_val3.user_select_right_ans="true";   //TODO call this in selected option
+this.test_submit.mcq.push(new_val3);
+console.log("new=",this.test_submit.mcq[2].mq_id);
+var raw = JSON.stringify(this.test_submit);
+    console.log("rw1 "+raw);
 console.log(this.questions[this.question].mq_question);
 console.log(this.questions[this.question].mcq_answer_master);
 this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -107,7 +213,7 @@ this.loadComplete = true;
 
 }
 
-// ------------------------------------------this is for deposites frpm deposite page
+// ------------------------------------------this is for deposites from deposite page
 callfun_deposite(response,number){
   this.deposite = response;
   
@@ -137,7 +243,7 @@ onTImerFinished(e)
     if(this.wronganswer>0&&this.bonusRound&&this.superbonusPlay)
     {
       alert("you lost super bonus round");
-      this.superbonusPlay=false;
+      //this.superbonusPlay=false;
       this.superbonusround = false;
       this.finished = true;
       this.goBack=true;
@@ -205,15 +311,18 @@ onTImerFinished(e)
     //   this.restart();
     // }
     else{
-      if(this.round>=3)
-      {
-        this.router.navigate(["/winPage"]);
-      }
+      // if(this.round>=3)
+      // {
+      //   this.router.navigate(["/winPage"]);
+      // }
       this.finished = true;
       if(!this.bonusPlay)
       this.service.putAmount(this.rightanswer,this.round);
       else if(this.bonusPlay&&this.wronganswer<=1&&!this.superbonusPlay)
-      this.service.amount +=10;/////add bonus round win amount
+      {
+      this.service.amount +=10;/////add bonus round win amount and heart addition
+      console.log("played"+this.superbonusPlay);
+      }
       else if(this.bonusPlay&&this.wronganswer<1&&this.superbonusPlay)
       {
         this.service.amount +=20;  // add super bonus amount
@@ -228,6 +337,11 @@ onTImerFinished(e)
         console.log("superbonus round");
         this.superbonusround = true;
       }
+      if(this.round>=3)
+      {
+        this.router.navigate(["/winPage"]);
+      }
+
     }
   }
 }
@@ -563,6 +677,12 @@ callfun1(response){
       this.markCorrect()
       // this.rightOption[3]="green";
       this.loadComplete = true;
+    }
+
+    test_submit_fun(){
+      var raw = JSON.stringify(this.test_submit);
+    console.log("rw "+raw);
+      this.mainservice.user_test_submit(raw).subscribe(response=>console.log(response))
     }
 }
 

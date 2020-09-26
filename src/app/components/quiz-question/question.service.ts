@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { FormBuilder, FormGroup } from "@angular/forms";
-import {Questions} from './questions'
+import {Questions} from './questions';
+import {Answers} from './answers'
 import { Observable,pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Injectable({

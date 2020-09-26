@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import {Deposites} from '../components/deposite-page/deposite';
 
 import {Users} from './log-in/user'
+import { htmlPrefilter } from 'jquery';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class MainServiceService {
   u_email;
   email;
   password;
+  
   constructor(private http: HttpClient) { }
 getUserDetails()
 {
@@ -56,18 +58,20 @@ getUserDetails()
   {
     var data = new FormData();
     
-  
-    return this.http.post<Deposites>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/deposite/deposite_list',data).pipe(map(response => response.data))  
+    const headers = { 'Authorization': "Basic YWRtaW46MTIzNA=="};
+    return this.http.post<Deposites>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/deposite/deposite_list',data,{headers}).pipe(map(response => response.data))  
   }
   getfun_deposite()
   {
     var data = new FormData();
-    return this.http.post<Deposites>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/deposite/deposite_list',data).pipe(map(response => response.data))  
+    const headers = { 'Authorization': "Basic YWRtaW46MTIzNA=="};
+    return this.http.post<Deposites>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/deposite/deposite_list',data,{headers}).pipe(map(response => response.data))  
 
   }
   payment_submit(user_id,deposite_id,amount,type,status,description,result,check_no,check_id)
   {
     var formdata = new FormData();
+    const headers = { 'Authorization': "Basic YWRtaW46MTIzNA=="};
   //   data.append("user_id",user_id );
  
   // data.append("deposite_id", deposite_id);
@@ -99,7 +103,14 @@ formdata.append("description", description);
 formdata.append("result", result);
 formdata.append("check_no", check_no);
 formdata.append("check_id",check_id);
-  return this.http.post<{"result"}>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/payment/payment_submit',formdata).pipe(map(response => response))
+  return this.http.post<{"result"}>('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/payment/payment_submit',formdata,{headers}).pipe(map(response => response))
+  }
+
+  user_test_submit(data){
+    
+
+    return this.http.post('https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/quiz/quiz_test_submit',data).pipe(map(response => response))
+
   }
 }
 
