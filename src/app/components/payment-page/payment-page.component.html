@@ -1,16 +1,16 @@
 <div class="bg">
 <div class="container">
 
-<div (click)="type(1)" class="alipay">
+<div [style.background]="selectColor[0]" (click)="type(1)" class="alipay">
    
     <img src="assets/alipay.png" alt="">
    
 </div>
-<div (click)="type(2)" class="green-money">
+<div [style.background]="selectColor[1]" (click)="type(2)" class="green-money">
     <img src="assets/green_money.png" alt="">
 </div>
 </div>
-<div routerLink="/greenMoneyDetail" class="footer">
+<!-- <div routerLink="/greenMoneyDetail" class="footer">
     <button   class="btn btn-primary">Contiue</button>
-</div>    
+</div>     -->
 </div>

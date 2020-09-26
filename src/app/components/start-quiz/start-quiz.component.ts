@@ -45,7 +45,7 @@ mySubscription: any;
     
     console.log(response);
     this.userDetail = response;
-    this.mainservice.user_details=response;   // storing user all details in main server for future references
+    this.mainservice.user_details=response;     // storing user all details in main server for future references
       this.mainservice.u_id=this.userDetail.u_id;
       this.mainservice.u_username=this.userDetail.u_username;
       this.mainservice.u_email=this.userDetail.u_email;

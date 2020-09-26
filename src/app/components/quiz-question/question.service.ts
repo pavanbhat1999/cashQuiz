@@ -16,6 +16,8 @@ export class QuestionService {
     private http: HttpClient) {
      
      }
+
+     /// amount additions
      putAmount(rightAnswer : number,round){
       //  if(round==1){
       //   rightAnswer=rightAnswer*0.2;
@@ -36,32 +38,32 @@ export class QuestionService {
      getAmount(){
         return this.amount;
      }
-  getfun()
+  getfun(category_id,type,user_id)
   {
     var data = new FormData();
-    data.append("category_id", "1");
-    data.append("type", "starter");
-    data.append("user_id", "6");
+    data.append("category_id",category_id );
+    data.append("type", type);
+    data.append("user_id", user_id);
     data.append("time", "");
   
     return this.http.post<Questions>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API/quiz/mcq_list',data).pipe(map(response => response.data))  
   }
-  getfun_bonus()
+  getfun_bonus(category_id,type,user_id)
   {
     var data = new FormData();
-    data.append("category_id", "1");
-    data.append("type", "bonus");
-    data.append("user_id", "6");
+    data.append("category_id",category_id );
+    data.append("type", type);
+    data.append("user_id", user_id);
     data.append("time", "");
   
     return this.http.post<Questions>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API/quiz/mcq_list',data).pipe(map(response => response.data))  
   
   }
-  getfun_superbonus(){
+  getfun_superbonus(category_id,type,user_id){
     var data = new FormData();
-    data.append("category_id", "1");
-    data.append("type", "bonus");
-    data.append("user_id", "6");
+    data.append("category_id",category_id );
+    data.append("type", type);
+    data.append("user_id", user_id);
     data.append("time", "");
   
     return this.http.post<Questions>('https://cors-anywhere.herokuapp.com/https://moneyglobeapp.com/cash_quiz/API/quiz/mcq_list',data).pipe(map(response => response.data))  

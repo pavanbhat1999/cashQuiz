@@ -59,13 +59,17 @@ export class QuizQuestionComponent implements OnInit {
   opacity3 : string = "";
   opacity4 : string = "";
   val = "";
+  
+  category_id="";
+  type="";
+  user_id="";
   answer_submit=[];
   test_submit=
   {
-    "category_id": "1",  // take it from main
-    "user_id": "2",      //take it from main 
+    "category_id": this.category_id,  // take it from main
+    "user_id": this.user_id,      //take it from main 
     "payment_history_id": "1",  // take it form deposite
-    "round_type": "starter",   // take it from current questions page
+    "round_type": this.type,   // take it from current questions page
      "mcq": [                // apppend for each answer
          
         ]
@@ -90,19 +94,37 @@ export class QuizQuestionComponent implements OnInit {
     
   //  var raw = JSON.stringify(this.test_submit);
   //   console.log("rw "+raw);
-    this.service.getfun()
+  console.log("id from main="+this.mainservice.d_number);
+  console.log("red=",this.mainservice.redheart);
+  console.log("amount deposited ="+this.mainservice.totalAmount);
+  console.log("user_id="+this.mainservice.u_id);
+  this.user_id=this.mainservice.u_id;
+  this.category_id=this.mainservice.cat_id;
+  this.type=this.mainservice.type;
+  console.log("cat_id="+this.mainservice.cat_id);
+ //  getting all data from main service
+  this.redHeartCount=this.mainservice.redheart;
+  this.yellowHeartCount=this.mainservice.yellowheart;
+  this.mainservice.getfun_deposite().subscribe(response=>{console.log(response);this.callfun_deposite(response,this.mainservice.d_number)})
+  this.test_submit=
+  {
+    "category_id": this.category_id,  // take it from main
+    "user_id": this.user_id,      //take it from main 
+    "payment_history_id": "1",  // take it form deposite
+    "round_type": this.type,   // take it from current questions page
+     "mcq": [                // apppend for each answer
+         
+        ]
+      }
+  
+
+  this.service.getfun(this.category_id,"starter",this.user_id)
     .subscribe(response => 
     {
     console.log(response);
     this.callfun(response);
     });
-   console.log("id from main="+this.mainservice.d_number);
-   console.log("red=",this.mainservice.redheart);
-   console.log("amount deposited ="+this.mainservice.totalAmount)
-  //  getting all data from main service
-   this.redHeartCount=this.mainservice.redheart;
-   this.yellowHeartCount=this.mainservice.yellowheart;
-   this.mainservice.getfun_deposite().subscribe(response=>{console.log(response);this.callfun_deposite(response,this.mainservice.d_number)})
+
   }
 
 
@@ -282,6 +304,7 @@ onTImerFinished(e)
       {
       this.service.amount +=10;/////add bonus round win amount and heart addition
       console.log("played"+this.superbonusPlay);
+      this.type="bonus";
       }
       else if(this.bonusPlay&&this.wronganswer<1&&this.superbonusPlay)
       {
@@ -291,6 +314,7 @@ onTImerFinished(e)
       if(this.rightanswer>=8)
       {
         this.bonusRound = true;
+        this.type="bonus";
       }
       if(this.rightanswer>=9&&this.bonusPlay)
       {
@@ -691,31 +715,22 @@ continueClicked()
       {
         this.router.navigate(["/winPage"]);
       }
-  this.test_submit=
-  {
-    "category_id": "1",  // take it from main
-    "user_id": "2",      //take it from main 
-    "payment_history_id": "1",  // take it form deposite
-    "round_type": "starter",   // take it from current questions page
-     "mcq": [                // apppend for each answer
-         
-        ]
-      }
-
+      
   if(this.rightanswer>=8&&!this.superbonusround)
   {
+    
     alert("You have entered Bonus round");
     this.bonusRoundQuestions();
     
   }
   else if(this.bonusPlay&&this.superbonusround&&this.rightanswer>9){
-    
+      this.type="superbonus";
       alert("This is super bonus Round");
       this.superbonusRoundQuestions();
   }
   else
   {
-  
+    
     this.round++;
     this.goBack=false;
     this.rightanswer = 0;
@@ -733,13 +748,23 @@ continueClicked()
     this.finished = false;
     this.selectedoption = false;
     this.bgcolor = '#0f3356';
-    this.service.getfun()
+    this.service.getfun(this.category_id,"starter",this.user_id)
       .subscribe(response => 
       {
       console.log(response);
       this.callfun1(response);
       });
     }
+    this.test_submit=
+      {
+        "category_id": this.category_id,  // take it from main
+        "user_id": this.user_id,      //take it from main 
+        "payment_history_id": "1",  // take it form deposite
+        "round_type": this.type,   // take it from current questions page
+         "mcq": [                // apppend for each answer
+             
+            ]
+          }
 }
 callfun1(response){
   console.log("called")
@@ -771,7 +796,7 @@ callfun1(response){
   this.finished = false;
   this.selectedoption = false;
   this.bgcolor = '#0f3356';
-  this.service.getfun_bonus()
+  this.service.getfun_bonus(this.category_id,"bonus",this.user_id)
       .subscribe(response => 
       {
       console.log(response);
@@ -810,7 +835,7 @@ callfun1(response){
      this.finished = false;
      this.selectedoption = false;
      this.bgcolor = '#0f3356';
-     this.service.getfun_superbonus()
+     this.service.getfun_superbonus(this.category_id,"bonus",this.user_id)
          .subscribe(response => 
          {
          console.log(response);

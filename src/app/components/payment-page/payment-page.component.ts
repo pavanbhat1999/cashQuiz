@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {MainServiceService} from '../main-service.service'
 @Component({
   selector: 'app-payment-page',
@@ -6,8 +7,8 @@ import {MainServiceService} from '../main-service.service'
   styleUrls: ['./payment-page.component.css']
 })
 export class PaymentPageComponent implements OnInit {
-
-  constructor(private mainservice : MainServiceService) { }
+selectColor=["grey","grey"];
+  constructor(private mainservice : MainServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -15,9 +16,17 @@ export class PaymentPageComponent implements OnInit {
 
   }
 type(type){
+ 
   if(type==1)
-  this.mainservice.d_type="alipay"
-  if(type==2)
- this.mainservice.d_type="green-money"
+  {
+  this.mainservice.d_type="alipay";
+  this.selectColor[0]="blue";
+  }
+ if(type==2)
+ {
+ this.mainservice.d_type="green-money";
+ this.selectColor[1]="blue";
+ this.router.navigate(["/greenMoneyDetail"])
+  }
 }
 }

@@ -12,6 +12,7 @@ export class GreenMoneyDetailComponent implements OnInit {
   deposite_id;
   amount;
   type;
+  // these things has to be done with backend
   status = "success";
   description = "check accepted"
   result = 1;
@@ -21,8 +22,9 @@ export class GreenMoneyDetailComponent implements OnInit {
   constructor(private mainservice : MainServiceService,private router:Router) { }
 
   ngOnInit(): void {
+    this.user_id=this.mainservice.u_id;
     this.deposite_id = this.mainservice.d_number+1;  // id0 is incresed by 1 to give correct answer
-   this.user_id=this.mainservice.u_id;
+   
    this.deposite_id=this.deposite_id;
     
    this.amount=this.mainservice.totalAmount;

@@ -12,20 +12,30 @@ import { htmlPrefilter } from 'jquery';
   providedIn: 'root',
 })
 export class MainServiceService {
-  d_number: number = 0;
-  redheart: number = 0;
-  yellowheart: number = 0;
-  totalAmount;
-  d_type;
+
+  // ------------------------------------from deposite Page
+  d_number: number = 0;   //* d_id  -dP
+  redheart: number = 0;   //* redheartcount -dP
+  yellowheart: number = 0;//* yelloheartCount -dP
+  totalAmount;             //* total amount -dP
+  d_type;                   // * payment type -pP
   deposite;
+  //-----------------------------------------start Page
   user_details;
-  u_id;
-  u_username;
-  u_email;
+  u_id;                     //* u_id  -sP
+  u_username;        //!!username for -sp//
+  u_email;           //!!email for -sP//       
   email;
   password;
+//-------------------languagePage-------------
+ cat_id;
+ cat_name;
 
+ //-------------questionPage
+ type="starter";
   constructor(private http: HttpClient) {}
+
+  // getting details after login 
   getUserDetails() {
     var data = new FormData();
     data.append('email', this.email);
@@ -39,13 +49,16 @@ export class MainServiceService {
       )
       .pipe(map((response) => response.data));
   }
+  // putting d_id
   putDeposite(id) {
     console.log('deposite_id=' + id);
     this.d_number = id;
   }
+  //getting deposite details for display
   getDeposite(deposite) {
     this.deposite = deposite;
   }
+  // login authorization
   getlogin(email, password) {
     this.email = email;
     this.password = password;
@@ -61,6 +74,7 @@ export class MainServiceService {
       )
       .pipe(map((response) => response));
   }
+  // depositelist
   getfun() {
     var data = new FormData();
 
@@ -73,6 +87,7 @@ export class MainServiceService {
       )
       .pipe(map((response) => response.data));
   }
+   // depositelist
   getfun_deposite() {
     var data = new FormData();
     const headers = { Authorization: 'Basic YWRtaW46MTIzNA==' };
@@ -84,6 +99,7 @@ export class MainServiceService {
       )
       .pipe(map((response) => response.data));
   }
+  //payment_submit
   payment_submit(
     user_id,
     deposite_id,
@@ -137,6 +153,21 @@ export class MainServiceService {
       .pipe(map((response) => response));
   }
 
+// categorylist
+getCategoryData()
+{
+  var data = new FormData();
+
+  const headers = { Authorization: 'Basic YWRtaW46MTIzNA==' };
+  return this.http
+    .post<Deposites>(
+      'https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/quiz/category_list',
+      data,
+      { headers }
+    )
+    .pipe(map((response) => response.data));
+}  
+// user_test_submit
   user_test_submit(data) {
     const headers = { Authorization: 'Basic YWRtaW46MTIzNA==' };
     
