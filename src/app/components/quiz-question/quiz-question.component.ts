@@ -59,6 +59,7 @@ export class QuizQuestionComponent implements OnInit {
   opacity3 : string = "";
   opacity4 : string = "";
   val = "";
+  answer_submit=[];
   test_submit=
   {
     "category_id": "1",  // take it from main
@@ -188,26 +189,28 @@ export class QuizQuestionComponent implements OnInit {
 callfun(response){
 console.log("called")
 this.questions = response;
-var new_val3 = this.questions[this.question];
-new_val3.user_select_right_ans="true";   //TODO call this in selected option
-// Add all attributes do not miss any attribute for any option
-new_val3.mcq_answer_master[0].is_user_selected="true";
-new_val3.mcq_answer_master[0].is_red_heart_selected=null;
-new_val3.mcq_answer_master[0].is_system_selected=null;
+this.answer_submit[this.question] = this.questions[this.question];
+   //TODO call this in selected option // Add all attributes do not miss any attribute for any option
+                                                      
+this.answer_submit[this.question].mcq_answer_master[0].is_user_selected="true";
+this.answer_submit[this.question].mcq_answer_master[0].is_red_heart_selected=null;
+this.answer_submit[this.question].mcq_answer_master[0].is_system_selected=null;
 
-new_val3.mcq_answer_master[1].is_user_selected=null;
-new_val3.mcq_answer_master[1].is_red_heart_selected=null;
-new_val3.mcq_answer_master[1].is_system_selected=null;
+this.answer_submit[this.question].mcq_answer_master[1].is_user_selected=null;
+this.answer_submit[this.question].mcq_answer_master[1].is_red_heart_selected=null;
+this.answer_submit[this.question].mcq_answer_master[1].is_system_selected=null;
 
-new_val3.mcq_answer_master[2].is_user_selected=null;
-new_val3.mcq_answer_master[2].is_red_heart_selected=null;
-new_val3.mcq_answer_master[2].is_system_selected=null;
+this.answer_submit[this.question].mcq_answer_master[2].is_user_selected=null;
+this.answer_submit[this.question].mcq_answer_master[2].is_red_heart_selected=null;
+this.answer_submit[this.question].mcq_answer_master[2].is_system_selected=null;
 
-new_val3.mcq_answer_master[3].is_user_selected=null;
-new_val3.mcq_answer_master[3].is_red_heart_selected=null;
-new_val3.mcq_answer_master[3].is_system_selected=null;
+this.answer_submit[this.question].mcq_answer_master[3].is_user_selected=null;
+this.answer_submit[this.question].mcq_answer_master[3].is_red_heart_selected=null;
+this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
 
-this.test_submit.mcq.push(new_val3);
+this.answer_submit[this.question].user_select_right_ans="true";
+
+this.test_submit.mcq.push(this.answer_submit[0]);
 console.log("new=",this.test_submit.mcq[0].mq_id);
 var raw = JSON.stringify(this.test_submit);
     console.log("rw1 "+raw);
@@ -284,7 +287,7 @@ onTImerFinished(e)
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
       this.option4 = this.questions[this.question].mcq_answer_master[3].answer;
-     
+     //TODO add submiting sccript
       this.markCorrect()
       
       //// if(this.question==4)
