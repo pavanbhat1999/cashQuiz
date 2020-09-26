@@ -189,31 +189,8 @@ export class QuizQuestionComponent implements OnInit {
 callfun(response){
 console.log("called")
 this.questions = response;
-this.answer_submit[this.question] = this.questions[this.question];
-   //TODO call this in selected option // Add all attributes do not miss any attribute for any option
-                                                      
-this.answer_submit[this.question].mcq_answer_master[0].is_user_selected="true";
-this.answer_submit[this.question].mcq_answer_master[0].is_red_heart_selected=null;
-this.answer_submit[this.question].mcq_answer_master[0].is_system_selected=null;
+//TODO call this in selected option // Add all attributes do not miss any attribute for any option
 
-this.answer_submit[this.question].mcq_answer_master[1].is_user_selected=null;
-this.answer_submit[this.question].mcq_answer_master[1].is_red_heart_selected=null;
-this.answer_submit[this.question].mcq_answer_master[1].is_system_selected=null;
-
-this.answer_submit[this.question].mcq_answer_master[2].is_user_selected=null;
-this.answer_submit[this.question].mcq_answer_master[2].is_red_heart_selected=null;
-this.answer_submit[this.question].mcq_answer_master[2].is_system_selected=null;
-
-this.answer_submit[this.question].mcq_answer_master[3].is_user_selected=null;
-this.answer_submit[this.question].mcq_answer_master[3].is_red_heart_selected=null;
-this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
-
-this.answer_submit[this.question].user_select_right_ans="true";
-
-this.test_submit.mcq.push(this.answer_submit[0]);
-console.log("new=",this.test_submit.mcq[0].mq_id);
-var raw = JSON.stringify(this.test_submit);
-    console.log("rw1 "+raw);
 console.log(this.questions[this.question].mq_question);
 console.log(this.questions[this.question].mcq_answer_master);
 this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -442,6 +419,46 @@ for (let j of numbers) {
 selectoption1(){
   console.log(this.questions[this.question].mcq_answer_master);
   console.log(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer);
+
+
+
+  this.answer_submit[this.question] = this.questions[this.question];
+   
+                                                      
+  this.answer_submit[this.question].mcq_answer_master[0].is_user_selected="true";
+  this.answer_submit[this.question].mcq_answer_master[0].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[0].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[1].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[1].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[1].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[2].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[2].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[2].is_system_selected=null;
+  
+  this.answer_submit[this.question].mcq_answer_master[3].is_user_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[3].is_red_heart_selected=null;
+  this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
+  
+  this.answer_submit[this.question].user_select_right_ans="true";
+  
+  this.test_submit.mcq.push(this.answer_submit[0]);
+  console.log("new=",this.test_submit.mcq[0].mq_id);
+  var raw = JSON.stringify(this.test_submit);
+      console.log("rw1 "+raw);
+
+
+
+
+
+
+
+
+
+
+
+
   if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
   {
   this.bgcolor = 'green';
