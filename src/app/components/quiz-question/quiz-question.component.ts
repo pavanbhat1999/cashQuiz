@@ -298,10 +298,10 @@ onTImerFinished(e)
         this.superbonusround = true;
       }
      
-      if(this.round>=3)
-      {
-        this.router.navigate(["/winPage"]);
-      }
+      // if(this.round>=3)
+      // {
+      //   this.router.navigate(["/winPage"]);
+      // }
 
     }
   }
@@ -687,6 +687,10 @@ selectoption4(){
 // ------------------------------------------------------Continue to next round----------------------------------------------------
 continueClicked()
 {
+  if(this.round>=3)
+      {
+        this.router.navigate(["/winPage"]);
+      }
   this.test_submit=
   {
     "category_id": "1",  // take it from main
