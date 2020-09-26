@@ -246,6 +246,7 @@ onTImerFinished(e)
       //   this.router.navigate(["/winPage"]);
       // }
       this.finished = true;
+      this.test_submit_fun();
       if(!this.bonusPlay)
       this.service.putAmount(this.rightanswer,this.round);
       else if(this.bonusPlay&&this.wronganswer<=1&&!this.superbonusPlay)
@@ -379,7 +380,7 @@ selectoption1(){
   
   this.answer_submit[this.question].user_select_right_ans="true";
   this.test_submit.mcq.push(this.answer_submit[this.question]);
-  console.log("new=",this.test_submit.mcq[this.question].mq_id);
+  console.log("new=",this.test_submit.mcq[this.questionNow].mq_id);
   var raw = JSON.stringify(this.test_submit);
       console.log("rw1 "+raw);
 
@@ -483,7 +484,7 @@ selectoption2(){
   
   this.answer_submit[this.question].user_select_right_ans="true";
   this.test_submit.mcq.push(this.answer_submit[this.question]);
-  console.log("new=",this.test_submit.mcq[this.question].mq_id);
+  console.log("new=",this.test_submit.mcq[this.questionNow].mq_id);
   var raw = JSON.stringify(this.test_submit);
       console.log("rw1 "+raw);
 
@@ -555,7 +556,7 @@ selectoption3(){
   
   this.answer_submit[this.question].user_select_right_ans="true";
   this.test_submit.mcq.push(this.answer_submit[this.question]);
-  console.log("new=",this.test_submit.mcq[this.question].mq_id);
+  console.log("new=",this.test_submit.mcq[this.questionNow].mq_id);
   var raw = JSON.stringify(this.test_submit);
       console.log("rw1 "+raw);
 
@@ -621,7 +622,7 @@ selectoption4(){
   
   this.answer_submit[this.question].user_select_right_ans="true";
   this.test_submit.mcq.push(this.answer_submit[this.question]);
-  console.log("new=",this.test_submit.mcq[this.question].mq_id);
+  console.log("new=",this.test_submit.mcq[this.questionNow].mq_id);
   var raw = JSON.stringify(this.test_submit);
       console.log("rw1 "+raw);
 
@@ -656,6 +657,16 @@ selectoption4(){
 // ------------------------------------------------------Continue to next round----------------------------------------------------
 continueClicked()
 {
+  this.test_submit=
+  {
+    "category_id": "1",  // take it from main
+    "user_id": "2",      //take it from main 
+    "payment_history_id": "1",  // take it form deposite
+    "round_type": "starter",   // take it from current questions page
+     "mcq": [                // apppend for each answer
+         
+        ]
+      }
 
   if(this.rightanswer>=8&&!this.superbonusround)
   {
