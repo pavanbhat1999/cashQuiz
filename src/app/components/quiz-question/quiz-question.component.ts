@@ -268,6 +268,7 @@ onTImerFinished(e)
         console.log("superbonus round");
         this.superbonusround = true;
       }
+     
       if(this.round>=3)
       {
         this.router.navigate(["/winPage"]);
