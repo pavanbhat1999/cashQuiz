@@ -15,7 +15,7 @@ import {Answers} from './answers';
 
 export class QuizQuestionComponent implements OnInit {
   @Output()continueclicked = new EventEmitter();
-  amount ;
+  amount:number ;
   deposite ;
   bonusRound = false;
   bonusPlay = false;
