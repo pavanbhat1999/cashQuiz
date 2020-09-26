@@ -185,6 +185,34 @@ onTImerFinished(e)
     this.question=14;
     if (this.question<20&&!this.finished&&this.questionNow<9)
     {
+      if(!this.selectedoption)
+      {
+        this.answer_submit[this.question] = this.questions[this.question];
+   
+                                                      
+        this.answer_submit[this.question].mcq_answer_master[0].is_user_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[0].is_red_heart_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[0].is_system_selected=null;
+        
+        this.answer_submit[this.question].mcq_answer_master[1].is_user_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[1].is_red_heart_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[1].is_system_selected=null;
+        
+        this.answer_submit[this.question].mcq_answer_master[2].is_user_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[2].is_red_heart_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[2].is_system_selected=null;
+        
+        this.answer_submit[this.question].mcq_answer_master[3].is_user_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[3].is_red_heart_selected=null;
+        this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
+        
+        this.answer_submit[this.question].user_select_right_ans="fasle";
+        this.test_submit.mcq.push(this.answer_submit[this.question]);
+        console.log("new=",this.test_submit.mcq[this.questionNow].mq_id);
+        var raw = JSON.stringify(this.test_submit);
+            console.log("rw1 "+raw);
+      
+      }
       console.log("question complete goto next");
       this.selectedoption = false;
       this.bgcolor = '#0f3356';
@@ -202,6 +230,7 @@ onTImerFinished(e)
       
       //// if(this.question==4)
       //// this.question_lv2 =9;
+      
       this.restart();
     }
    
@@ -675,7 +704,7 @@ continueClicked()
     this.bonusRoundQuestions();
     
   }
-  else if(this.bonusPlay&&this.superbonusround){
+  else if(this.bonusPlay&&this.superbonusround&&this.rightanswer>9){
     
       alert("This is super bonus Round");
       this.superbonusRoundQuestions();
