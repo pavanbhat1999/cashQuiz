@@ -183,7 +183,7 @@ onTImerFinished(e)
     this.question=10;
     if(this.question==13)
     this.question=14;
-    if (this.question<16&&!this.finished)
+    if (this.question<20&&!this.finished&&this.questionNow<9)
     {
       console.log("question complete goto next");
       this.selectedoption = false;
