@@ -78,86 +78,7 @@ export class QuizQuestionComponent implements OnInit {
   ngOnInit(): void {
     
   //  *****Important test_submit insertion***
-    var new_value={
-      "mcq_answer_master": [
-          {
-              "answer": "lion",
-              "is_red_heart_selected": null,
-              "is_system_selected": null,
-              "is_user_selected": null,
-              "mc_id": 2252,
-              "mc_is_true_answer": "wrong"
-          },
-          {
-              "answer": "cheetah",
-              "is_red_heart_selected": false,
-              "is_system_selected": false,
-              "is_user_selected": true,
-              "mc_id": 2253,
-              "mc_is_true_answer": "right"
-          },
-          {
-              "answer": "man",
-              "is_red_heart_selected": null,
-              "is_system_selected": null,
-              "is_user_selected": null,
-              "mc_id": 2254,
-              "mc_is_true_answer": "wrong"
-          },
-          {
-              "answer": "jaguar",
-              "is_red_heart_selected": null,
-              "is_system_selected": null,
-              "is_user_selected": null,
-              "mc_id": 2255,
-              "mc_is_true_answer": "wrong"
-          }
-      ],
-      "mq_id": "1",
-      "mq_question": "The fastest-running terrestrial animal is",
-      "mq_time": "10",
-      "user_select_right_ans": true
-  }
-  var new_value1={
-    "mcq_answer_master": [
-        {
-            "answer": "lion",
-            "is_red_heart_selected": null,
-            "is_system_selected": null,
-            "is_user_selected": null,
-            "mc_id": 2252,
-            "mc_is_true_answer": "wrong"
-        },
-        {
-            "answer": "cheetah",
-            "is_red_heart_selected": false,
-            "is_system_selected": false,
-            "is_user_selected": true,
-            "mc_id": 2253,
-            "mc_is_true_answer": "right"
-        },
-        {
-            "answer": "man",
-            "is_red_heart_selected": null,
-            "is_system_selected": null,
-            "is_user_selected": null,
-            "mc_id": 2254,
-            "mc_is_true_answer": "wrong"
-        },
-        {
-            "answer": "jaguar",
-            "is_red_heart_selected": null,
-            "is_system_selected": null,
-            "is_user_selected": null,
-            "mc_id": 2255,
-            "mc_is_true_answer": "wrong"
-        }
-    ],
-    "mq_id": "1",
-    "mq_question": "The fastest-running terrestrial animal is",
-    "mq_time": "10",
-    "user_select_right_ans": false
-}
+ 
   // this.test_submit.mcq.push(
   //   new_value
   // );
@@ -166,8 +87,9 @@ export class QuizQuestionComponent implements OnInit {
   //     new_value1
   //   );
    // console.log("string "+this.test_submit.mcq[0].user_select_right_ans);
-    var raw = JSON.stringify(this.test_submit);
-    console.log("rw "+raw);
+    
+  //  var raw = JSON.stringify(this.test_submit);
+  //   console.log("rw "+raw);
     this.service.getfun()
     .subscribe(response => 
     {
@@ -190,6 +112,17 @@ callfun(response){
 console.log("called")
 this.questions = response;
 //TODO call this in selected option // Add all attributes do not miss any attribute for any option
+
+
+
+
+
+
+
+
+
+
+
 
 console.log(this.questions[this.question].mq_question);
 console.log(this.questions[this.question].mcq_answer_master);
@@ -422,6 +355,9 @@ selectoption1(){
 
 
 
+
+  
+
   this.answer_submit[this.question] = this.questions[this.question];
    
                                                       
@@ -442,12 +378,10 @@ selectoption1(){
   this.answer_submit[this.question].mcq_answer_master[3].is_system_selected=null;
   
   this.answer_submit[this.question].user_select_right_ans="true";
-  
-  this.test_submit.mcq.push(this.answer_submit[0]);
-  console.log("new=",this.test_submit.mcq[0].mq_id);
+  this.test_submit.mcq.push(this.answer_submit[this.question]);
+  console.log("new=",this.test_submit.mcq[this.question].mq_id);
   var raw = JSON.stringify(this.test_submit);
       console.log("rw1 "+raw);
-
 
 
 
