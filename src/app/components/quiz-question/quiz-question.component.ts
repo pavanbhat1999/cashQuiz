@@ -147,7 +147,7 @@ this.questions = response;
 
 
 console.log(this.questions[this.question].mq_question);
-console.log(this.questions[this.question].mcq_answer_master);
+//console.log(this.questions[this.question].mcq_answer_master);
 this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
 this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
 this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
@@ -242,7 +242,7 @@ onTImerFinished(e)
       this.bgcolor = '#0f3356';
       
       
-      console.log(this.questions[this.question].mcq_answer_master);
+      //console.log(this.questions[this.question].mcq_answer_master);
       this.printQuestion=this.questions[this.question].mq_question;
       this.questionNow++;
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -265,7 +265,7 @@ onTImerFinished(e)
     //   this.bgcolor = '#0f3356';
     //   this.question++;
       
-    //   console.log(this.questions[this.question].mcq_answer_master);
+    //   //console.log(this.questions[this.question].mcq_answer_master);
     //   this.printQuestion=this.questions[this.question].mq_question;
     //   this.questionNow++;
     //   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -283,7 +283,7 @@ onTImerFinished(e)
     //   this.bgcolor = '#0f3356';
     //   this.question++;
       
-    //   console.log(this.questions[this.question].mcq_answer_master);
+    //   //console.log(this.questions[this.question].mcq_answer_master);
     //   this.printQuestion=this.questions[this.question].mq_question;
     //   this.questionNow++;
     //   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
@@ -417,7 +417,7 @@ for (let j of numbers) {
 
 //---------------------------------- Option Selected properties-----------------------------------------------
 selectoption1(){
-  console.log(this.questions[this.question].mcq_answer_master);
+  //console.log(this.questions[this.question].mcq_answer_master);
   console.log(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer);
 
 
@@ -784,7 +784,7 @@ callfun1(response){
   this.questions = response;
   
   console.log(this.questions[this.question].mq_question);
-  console.log(this.questions[this.question].mcq_answer_master);
+  //console.log(this.questions[this.question].mcq_answer_master);
   this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
   this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
   this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
@@ -823,7 +823,7 @@ callfun1(response){
       this.questions = response;
       
       console.log(this.questions[this.question].mq_question);
-      console.log(this.questions[this.question].mcq_answer_master);
+      //console.log(this.questions[this.question].mcq_answer_master);
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
@@ -860,7 +860,7 @@ callfun1(response){
       this.questions = response;
      
       console.log(this.questions[this.question].mq_question);
-      console.log(this.questions[this.question].mcq_answer_master);
+      //console.log(this.questions[this.question].mcq_answer_master);
       this.option1 = this.questions[this.question].mcq_answer_master[0].answer;
       this.option2 = this.questions[this.question].mcq_answer_master[1].answer;
       this.option3 = this.questions[this.question].mcq_answer_master[2].answer;
