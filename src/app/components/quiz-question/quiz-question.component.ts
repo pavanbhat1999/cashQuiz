@@ -319,11 +319,11 @@ onTImerFinished(e)
       //   this.service.putAmount(this.rightanswer,this.round);
       // }
       this.amount = this.service.getAmount();
-      if(this.rightanswer>=8)
+      if(this.rightanswer>=8&&!this.bonusRound)
       {
         this.bonusRound = true;
         this.redHeartCount++;
-        this.yellowHeartCount++;
+        // this.yellowHeartCount++;
         this.type="bonus";
       }
       if(this.rightanswer>=9&&this.bonusPlay)

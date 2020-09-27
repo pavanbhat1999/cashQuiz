@@ -75,7 +75,7 @@ add(h){
   this.count_r++;
   this.totalAmount +=this.heart_price;
   }
-  if(h==2&&this.count_y<4)
+  if(h==2&&this.count_y<5)
   {
     this.count_y++;;
     this.totalAmount +=this.heart_price;

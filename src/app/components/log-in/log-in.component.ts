@@ -20,7 +20,17 @@ export class LogInComponent implements OnInit {
   constructor(private service : LoInService,ngZone : NgZone,public router : Router,private elementRef: ElementRef,private mainservice:MainServiceService) { }
 
   ngOnInit(): void {
-    
+    localStorage.setItem('dataSource', this.mainservice.u_email);
+    console.log(localStorage.getItem('dataSource'));
+    const firstTime = localStorage.getItem('key');
+ if(!firstTime){
+  localStorage.setItem('key','loaded')
+  
+  location.reload();
+ }else {
+   localStorage.removeItem('key') 
+ }
+ 
     
   }
 @Output() register_val=new EventEmitter();
