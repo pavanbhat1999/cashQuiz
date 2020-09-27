@@ -32,6 +32,7 @@ export class QuestionService {
             rightAnswer=8*this.each_amount;
       }
       else{
+        
         rightAnswer = rightAnswer*this.each_amount;
         }
         rightAnswer.toFixed(2);

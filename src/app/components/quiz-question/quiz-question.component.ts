@@ -313,20 +313,24 @@ onTImerFinished(e)
       {
         this.service.amount =Number(this.service.max_amount);  // add super bonus total amount
       }
-      else if (this.superbonusPlay&&this.bonusPlay&&this.wronganswer>=1)
-      {
-        this.service.each_amount=Number(this.service.su_bonus_amount);
-        this.service.putAmount(this.rightanswer,this.round);
-      }
+      // else if (this.superbonusPlay&&this.bonusPlay&&this.wronganswer>=1)
+      // {
+      //   this.service.each_amount=Number(this.service.su_bonus_amount);
+      //   this.service.putAmount(this.rightanswer,this.round);
+      // }
       this.amount = this.service.getAmount();
       if(this.rightanswer>=8)
       {
         this.bonusRound = true;
+        this.redHeartCount++;
+        this.yellowHeartCount++;
         this.type="bonus";
       }
       if(this.rightanswer>=9&&this.bonusPlay)
       {
         console.log("superbonus round");
+        this.redHeartCount++;
+        this.yellowHeartCount++;
         this.superbonusround = true;
       }
      
