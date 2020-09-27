@@ -172,7 +172,9 @@ callfun_deposite(response,number){
  console.log("d_Amount="+this.deposite[number].d_r_amt_st_p_question)
   this.service.each_amount = this.deposite[number].d_r_amt_st_p_question;
   // this.amount=this.deposite[number].d_amount;
-
+  this.service.bonus_amount=this.deposite[number].d_r_amt_bo_round;
+  this.service.su_bonus_amount=this.deposite[number].d_r_amt_su_bo_round;
+  this.service.max_amount=this.deposite[number].d_r_amt_total;
 }
 
 
@@ -302,13 +304,19 @@ onTImerFinished(e)
       this.service.putAmount(this.rightanswer,this.round);
       else if(this.bonusPlay&&this.wronganswer<=1&&!this.superbonusPlay)
       {
-      this.service.amount +=10;/////add bonus round win amount and heart addition
+      this.service.amount +=Number(this.service.bonus_amount);/////add bonus round win amount and heart addition
       console.log("played"+this.superbonusPlay);
       this.type="bonus";
       }
+     
       else if(this.bonusPlay&&this.wronganswer<1&&this.superbonusPlay)
       {
-        this.service.amount +=20;  // add super bonus amount
+        this.service.amount =Number(this.service.max_amount);  // add super bonus total amount
+      }
+      else if (this.superbonusPlay&&this.bonusPlay&&this.wronganswer>=1)
+      {
+        this.service.each_amount=Number(this.service.su_bonus_amount);
+        this.service.putAmount(this.rightanswer,this.round);
       }
       this.amount = this.service.getAmount();
       if(this.rightanswer>=8)

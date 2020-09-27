@@ -12,6 +12,9 @@ export class QuestionService {
   form: FormGroup;
   amount : number=0 ;
   each_amount = 0;
+  bonus_amount:number=0;
+  su_bonus_amount=0;
+  max_amount:number;
   constructor( 
     private http: HttpClient) {
      
