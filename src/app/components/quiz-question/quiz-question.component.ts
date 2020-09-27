@@ -742,6 +742,10 @@ continueClicked()
   }
   else
   {
+    if(this.round>=3)
+    {
+      this.router.navigate(["/winPage"]);
+    }
     
     this.round++;
     this.goBack=false;
