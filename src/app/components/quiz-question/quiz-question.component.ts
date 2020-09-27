@@ -723,10 +723,7 @@ selectoption4(){
 // ------------------------------------------------------Continue to next round----------------------------------------------------
 continueClicked()
 {
-  if(this.round>=3)
-      {
-        this.router.navigate(["/winPage"]);
-      }
+ 
       
   if(this.rightanswer>=8&&!this.superbonusround)
   {
@@ -744,7 +741,7 @@ continueClicked()
   {
     if(this.round>=3)
     {
-      this.router.navigate(["/winPage"]);
+      this.router.navigate(["/startPage"]);
     }
     
     this.round++;
