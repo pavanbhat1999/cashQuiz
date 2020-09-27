@@ -74,6 +74,21 @@ export class MainServiceService {
       )
       .pipe(map((response) => response));
   }
+  //aboutUS
+  about_us()
+  {
+    var data = new FormData();
+
+    const headers = { Authorization: 'Basic YWRtaW46MTIzNA==' };
+    return this.http
+      .post<Deposites>(
+        'https://cors-anywhere.herokuapp.com/http://moneyglobeapp.com/cash_quiz/API/settings/about_us',
+        data,
+        { headers }
+      )
+      .pipe(map((response) => response.data));
+
+  }
   // depositelist
   getfun() {
     var data = new FormData();

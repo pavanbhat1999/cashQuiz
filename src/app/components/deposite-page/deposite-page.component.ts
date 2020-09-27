@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import {DepositeListService} from '../deposite-page/deposite-list.service';
-import {MainServiceService} from '../main-service.service'
-import {Router} from '@angular/router'
+import {MainServiceService} from '../main-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-deposite-page',
