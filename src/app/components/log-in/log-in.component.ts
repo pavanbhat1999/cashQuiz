@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input, NgZone, ElementRef } from '@angular/core';
 import {LoInService} from '../log-in/lo-in.service';
 import {MainServiceService} from '../main-service.service'
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -30,7 +31,7 @@ export class LogInComponent implements OnInit {
  }else {
    localStorage.removeItem('key') 
  }
- 
+
     
   }
 @Output() register_val=new EventEmitter();
