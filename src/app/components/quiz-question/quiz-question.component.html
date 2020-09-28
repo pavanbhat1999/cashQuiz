@@ -65,11 +65,16 @@
   </button>
 </div>
 <!-- Loading is done -->
+
 <div
   *ngIf="loadComplete && !finished"
   class="bg"
   [style.background-color]="bgcolor"
 >
+<div   class="header">
+  <i  class="fas fa-arrow-left "></i>
+  <p style="color: white;font-size: 1rem;"> ENGLISH QUESTION</p>
+</div>
     <div class="upper-bar">
         <div class="status">
         <p>Question</p>

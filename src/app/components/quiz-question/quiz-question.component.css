@@ -238,4 +238,23 @@
   75%  {transform: rotate( 20deg);}
   100% {transform: rotate(-20deg);}
 }
+.fa-arrow-left{
+  position: fixed;
+  top: 10;
+  left: 0;
+  color: white
+}
+.header {
+
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  /* text-align: center; */
+  
+  padding: 2%;
+}
+.header p{
+  padding-left: 10%;
+  font-size: 1.3rem;
+}
 
