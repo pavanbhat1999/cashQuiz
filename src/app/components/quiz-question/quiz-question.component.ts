@@ -188,7 +188,7 @@ onTImerFinished(e)
     this.question++;
     if(this.wronganswer>1&&this.bonusRound&&!this.superbonusPlay)
     {
-      alert("you lost bonus round");
+      // alert("you lost bonus round");
       this.bonusRound =false;
       this.finished = true;
       this.goBack=true;
@@ -196,7 +196,7 @@ onTImerFinished(e)
     }
     if(this.wronganswer>0&&this.bonusRound&&this.superbonusPlay)
     {
-      alert("you lost super bonus round");
+      // alert("you lost super bonus round");
       //this.superbonusPlay=false;
       this.superbonusround = false;
       this.finished = true;
@@ -728,13 +728,13 @@ continueClicked()
   if(this.rightanswer>=8&&!this.superbonusround)
   {
     
-    alert("You have entered Bonus round");
+    // alert("You have entered Bonus round");
     this.bonusRoundQuestions();
     
   }
   else if(this.bonusPlay&&this.superbonusround&&this.rightanswer>9){
       this.type="superbonus";
-      alert("This is super bonus Round");
+      // alert("This is super bonus Round");
       this.superbonusRoundQuestions();
   }
   else
