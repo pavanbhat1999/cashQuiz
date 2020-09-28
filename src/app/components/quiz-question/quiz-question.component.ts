@@ -403,7 +403,7 @@ for (let j of numbers) {
   console.log(j);
   if(this.questions[this.question].mcq_answer_master[j].mc_is_true_answer=="right")
      this.rightOption[j]="green";
-     
+   
 }
   // if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="right")
   // this.rightOption[0]="green";
@@ -470,7 +470,8 @@ selectoption1(){
   }
   if(this.questions[this.question].mcq_answer_master[0].mc_is_true_answer=="wrong")
   {
-  this.bgcolor = '#f64225';
+  // this.bgcolor = '#f64225';
+  this.rightOption[0]="red";
   this.wronganswer++;
   }
   this.selectedoption = true;
@@ -578,7 +579,8 @@ selectoption2(){
     }
   if(this.questions[this.question].mcq_answer_master[1].mc_is_true_answer=="wrong")
   {
-  this.bgcolor = 'red';
+  // this.bgcolor = 'red';
+  this.rightOption[1]="red";
   this.wronganswer++;
   
   }
@@ -648,7 +650,8 @@ selectoption3(){
     }
   if(this.questions[this.question].mcq_answer_master[2].mc_is_true_answer=="wrong")
   {
-  this.bgcolor = 'red';
+  // this.bgcolor = 'red';
+  this.rightOption[2]="red";
   this.wronganswer++;
   }
   this.selectedoption = true;
@@ -708,7 +711,8 @@ selectoption4(){
     }
   if(this.questions[this.question].mcq_answer_master[3].mc_is_true_answer=="wrong")
   {
-    this.bgcolor = 'red';
+    // this.bgcolor = 'red';
+    this.rightOption[3]="red";
     this.wronganswer++;
     }
   this.selectedoption = true;
