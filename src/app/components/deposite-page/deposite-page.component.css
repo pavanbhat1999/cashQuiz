@@ -1,10 +1,10 @@
 /* The sidebar menu */
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 45%; /* Set the width of the sidebar */
+    width: 25%; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 0; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 10; /* Stay at the top */
     left: 0;
     background-color: #0f3356; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -33,7 +33,7 @@
   
   /* Style page content */
   .main {
-    margin-left: 45%; /* Same as the width of the sidebar */
+    margin-left: 25%; /* Same as the width of the sidebar */
     
     height: 100vh;
   }
@@ -71,6 +71,25 @@
     color: white;
     text-align: center;
     padding: 2%;
+  }
+  .fa-arrow-left{
+    position: fixed;
+    top: 10;
+    left: 0;
+    color: white
+  }
+  .header {
+  
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    /* text-align: center; */
+    
+    padding: 2%;
+  }
+  .header p{
+    padding-left: 10%;
+    font-size: 1.3rem;
   }
 
   .heart-deposite{

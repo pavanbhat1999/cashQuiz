@@ -80,7 +80,7 @@
       width: 50%;
       margin: 0 1%;
       padding: 3% 5%;
-      background: black;
+      background: rgb(245, 241, 241);
       border: solid black 0px;
       border-radius: 2rem;
       text-align: center;
@@ -99,7 +99,7 @@
 
     background: #fff;
     border: 2px solid #666;
-    color: #666;
+    color: rgb(15, 15, 15);
     text-align: center;
 
     font: 16px Arial, sans-serif;
@@ -113,7 +113,7 @@
     display: flex;
     align-items: center;
     width: 85%;
-    background: black;
+    background: rgb(245, 241, 241);
     margin: 5% 0 0 0;
     padding: 1%;
     border: solid black 2px;
@@ -121,6 +121,7 @@
 }
 .option p{
     padding-left: 10%;
+    color: black;
 }
 .lds-spinner {
     color: official;

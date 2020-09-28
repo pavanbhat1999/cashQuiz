@@ -475,7 +475,7 @@ selectoption1(){
   }
   this.selectedoption = true;
   this.initOpacity();
-  this.opacity1 = "white";
+  this.opacity1 = "grey";
   this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);
@@ -584,7 +584,7 @@ selectoption2(){
   }
   this.selectedoption = true;
   this.initOpacity();
-  this.opacity2 = "white";
+  this.opacity2 = "grey";
   this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);
@@ -653,7 +653,7 @@ selectoption3(){
   }
   this.selectedoption = true;
   this.initOpacity();
-  this.opacity3 = "white";
+  this.opacity3 = "grey";
   this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);
@@ -713,7 +713,7 @@ selectoption4(){
     }
   this.selectedoption = true;
   this.initOpacity();
-  this.opacity4 = "white";
+  this.opacity4 = "grey";
   this.counter.stop();
   setTimeout(() => {
     this.onTImerFinished(this.event);

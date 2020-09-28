@@ -19,6 +19,8 @@ totalAmount : number = 0;
 
 detail = [];
 detailDisplay;
+detailh=[];
+heartDisplay;
 continuePressed = true;
   constructor(private service : DepositeListService,public router : Router,private mainservice : MainServiceService) { }
 
@@ -41,6 +43,7 @@ callfun(response)
     console.log(i);
     this.amount[i]=this.deposite[i].d_amount;
     this.detail[i]=this.deposite[i].d_description;
+    this.detailh[i]=this.deposite[i].d_add_heart_description;
     }
   }
 
@@ -48,6 +51,7 @@ detailfetch(id){
   this.count_r =1;
 this.count_y =2;
 this.detailDisplay = this.detail[id];
+this.heartDisplay=this.detailh[id];
 this.totalAmount = parseFloat(this.amount[id]);
 
 this.heart_price = parseFloat(this.deposite[id].d_add_heart_amount);
@@ -95,5 +99,8 @@ continue(){
   }
   else
   this.continuePressed = false;
+  }
+  goback(){
+    this.router.navigate(["startPage"]);
   }
 }

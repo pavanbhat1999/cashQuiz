@@ -46,4 +46,7 @@ this.mainservice.cat_id="3";
 this.mainservice.cat_name=this.cat1;
 this.router.navigate(["/questions"]);
 }
+goback(){
+  this.router.navigate(["depositePage"]);
+}
 }
