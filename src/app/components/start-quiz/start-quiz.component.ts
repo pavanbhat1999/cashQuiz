@@ -60,7 +60,7 @@ mySubscription: any;
     //       theme: "minimal"   It was not working with angular
     //   });
     
-      $('#dismiss, .overlay').on('click', function () {
+      $('#dismiss, .overlay,.menu').on('click', function () {
           $('#sidebar').removeClass('active');
           $('.overlay').removeClass('active');
       });
